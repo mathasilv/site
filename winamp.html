@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WINAMP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 10px;
+      background: #000;
+      background-image: url("https://web.archive.org/web/20090829033325/http://geocities.com/HeartlandBluffs/4157/starbg.gif");
+      background-repeat: repeat;
+      font-family: Verdana, Arial, sans-serif;
+      color: #ccc;
+    }
+
+    /* “moldura” simples pra ficar com cara de janela */
+    .winamp-shell {
+      display: inline-block;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #808080 #808080 #FFFFFF;
+      padding: 6px;
+    }
+
+    /* Webamp (Winamp 2) é pensado em ~275x116 no main window clássico */
+    #winamp-container {
+      width: 275px;
+    }
+
+    .hint {
+      margin-top: 8px;
+      font-size: 11px;
+      font-family: "Courier New", monospace;
+      color: #00FF00;
+      background: #000;
+      border: 2px solid;
+      border-color: #808080 #FFFFFF #FFFFFF #808080;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="winamp-shell">
+    <div id="winamp-container"></div>
+  </div>
+
+  <div class="hint">
+    Dica: se o som não tocar, clique PLAY (política de autoplay do navegador). 
+  </div>
+
+  <!-- Webamp bundle -->
+  <script src="https://unpkg.com/webamp@2.2.0/built/webamp.bundle.min.js"></script>
+
+  <script>
+    // Playlist: coloque seus arquivos em /music/
+    const tracks = [
+      { url: "music/theme.mp3", defaultName: "Theme" },
+      { url: "music/track2.mp3", defaultName: "Track 2" },
+      { url: "music/track3.mp3", defaultName: "Track 3" },
+    ];
+
+    // Skin: opcional. Se você colocar um .wsz em /skins/, habilita aqui.
+    // skins são arquivos .wsz (zip com bitmaps), estilo Winamp clássico. 
+    const options = {
+      initialTracks: tracks,
+      // initialSkin: { url: "skins/SEU-SKIN.wsz" },
+    };
+
+    const webamp = new window.Webamp(options);
+    webamp.renderWhenReady(document.getElementById("winamp-container"));
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts</title>
+  <style>
+    body {
+      background-color: #000000;
+      background-image: url("https://web.archive.org/web/20090829033325/http://geocities.com/HeartlandBluffs/4157/starbg.gif");
+      background-repeat: repeat;
+      color: #CCCCCC;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Courier New", Courier, monospace;
+      text-transform: uppercase;
+      margin-top: 0;
+      letter-spacing: 1px;
+    }
+
+    .text-3d {
+      color: #FFFF00;
+      text-shadow: 2px 2px 0px #000000, 4px 4px 0px #333333;
+      font-weight: bold;
+    }
+
+    a { color: #00FFFF; text-decoration: none; }
+    a:hover { color: #FFFFFF; text-decoration: underline; cursor: help; }
+    a:visited { color: #FF00FF; }
+
+    .main-container {
+      width: 800px;
+      margin: 0 auto;
+      background-color: #000033;
+      border: 4px solid #C0C0C0;
+      border-top-color: #FFFFFF;
+      border-left-color: #FFFFFF;
+      border-right-color: #606060;
+      border-bottom-color: #606060;
+    }
+
+    .panel-outset {
+      background-color: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #808080 #808080 #FFFFFF;
+      padding: 5px;
+      color: black;
+    }
+
+    .panel-inset {
+      background-color: #000000;
+      border: 2px solid;
+      border-color: #808080 #FFFFFF #FFFFFF #808080;
+      padding: 10px;
+      color: #00FF00;
+    }
+
+    .nav-btn {
+      display: block;
+      width: 100%;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #000000 #000000 #FFFFFF;
+      text-align: center;
+      padding: 5px 0;
+      font-weight: bold;
+      color: #000000 !important;
+      text-decoration: none !important;
+      margin-bottom: 5px;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+    }
+
+    .nav-btn:active {
+      border-color: #000000 #FFFFFF #FFFFFF #000000;
+      transform: translate(1px, 1px);
+    }
+
+    .marquee-container {
+      background: black;
+      border: 2px inset white;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
+      padding: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .post-item {
+      background: #000022;
+      border: 2px solid #00FFFF;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .post-item h3 {
+      color: #00FF00;
+      margin: 0 0 10px 0;
+      border-bottom: 2px dashed #00FFFF;
+      padding-bottom: 5px;
+    }
+
+    hr.retro {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,255,255,0.75), rgba(0,0,0,0));
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="main-container" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="2" style="background-color:#000022;padding:10px;border-bottom:4px solid #C0C0C0;">
+        <table width="100%">
+          <tr>
+            <td width="100">
+              <img src="https://blob.gifcities.org/gifcities/4WF75CYWKWVJN7A7CRZ7HE2JEZURBJFE.gif" width="80" alt="Spinning Planet" loading="lazy">
+            </td>
+            <td align="center">
+              <h1 class="text-3d" style="font-size:32px;margin:0;">YOUR NAME'S LAB</h1>
+              <p style="color:#00FFFF;font-family:'Courier New',monospace;margin:5px;">POST ARCHIVE</p>
+            </td>
+            <td width="100" align="right">
+              <img src="https://blob.gifcities.org/gifcities/2XEZJUDE3HMBZXWK5V4M7JK27WCF6JDF.gif" width="80" alt="Satellite" loading="lazy">
+            </td>
+          </tr>
+        </table>
+
+        <div class="marquee-container">
+          <marquee scrollamount="5" scrolldelay="100">
+            POSTS DATABASE — SIMPLE BLOG MODE — CLICK TO READ
+          </marquee>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <!-- LEFT NAV -->
+      <td valign="top" width="200" style="background-color:#C0C0C0;border-right:2px solid #606060;padding:10px;">
+        <div class="panel-outset" style="margin-bottom:15px;">
+          <h3 style="text-align:center;font-size:14px;margin-bottom:5px;">COMMAND</h3>
+          <a href="index.html" class="nav-btn">HOME</a>
+          <a href="projects.html" class="nav-btn">POSTS</a>
+          <a href="gallery.html" class="nav-btn">PHOTOS</a>
+          <a href="mailto:your-email@example.com" class="nav-btn">CONTACT</a>
+        </div>
+
+        <div class="panel-inset" style="background:black;">
+          <h4 style="color:#FFFF00;margin:0 0 5px 0;border-bottom:1px dashed #666;">HOW TO POST</h4>
+          <p style="font-size:10px;font-family:'Courier New',monospace;margin:0;line-height:1.6;">
+            1) Copie posts/_template.html<br>
+            2) Renomeie para posts/SEU-ID.html<br>
+            3) Adicione no posts/posts.json<br>
+            4) Abra post.html?id=SEU-ID
+          </p>
+        </div>
+      </td>
+
+      <!-- MAIN -->
+      <td valign="top" style="padding:20px;">
+        <h2 class="text-3d">POSTS</h2>
+        <p style="color:#00FFFF;font-family:'Courier New',monospace;">
+          Lista automática via posts/posts.json
+        </p>
+
+        <hr class="retro" />
+
+        <div id="post-list">Carregando...</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" align="center" style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
+        <p>
+          <a href="index.html">RETURN TO HOME</a> |
+          <a href="gallery.html">VIEW GALLERY</a> |
+          <a href="mailto:your-email@example.com">CONTACT</a>
+        </p>
+        <p style="font-size:10px;">
+          COPYRIGHT &copy; 1999-2024 YOUR NAME. ALL RIGHTS RESERVED.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    fetch("posts/posts.json")
+      .then(r => r.json())
+      .then(posts => {
+        const root = document.getElementById("post-list");
+        const sorted = posts.slice().sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+
+        if (!sorted.length) {
+          root.innerHTML = "<div class='panel-inset'>Nenhum post ainda.</div>";
+          return;
+        }
+
+        root.innerHTML = "";
+        sorted.forEach(p => {
+          const box = document.createElement("div");
+          box.className = "post-item";
+          box.innerHTML = `
+            <h3>
+              ${p.title || "Sem título"}
+              <span style="float:right;color:#00FFFF;font-family:'Courier New',monospace;font-size:11px;">
+                ${p.date || ""}
+              </span>
+            </h3>
+            <p style="margin:10px 0;color:#CCCCCC;">
+              ${p.excerpt || ""}
+            </p>
+            <p style="margin:0;">
+              <a href="post.html?id=${encodeURIComponent(p.id)}">LER</a>
+            </p>
+          `;
+          root.appendChild(box);
+        });
+      })
+      .catch(() => {
+        document.getElementById("post-list").innerHTML =
+          "<div class='panel-inset'>Erro: não achei posts/posts.json</div>";
+      });
+  </script>
+</body>
+</html>
+

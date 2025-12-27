@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria</title>
+  <style>
+    body {
+      background-color: #000000;
+      background-image: url("https://web.archive.org/web/20090829033325/http://geocities.com/HeartlandBluffs/4157/starbg.gif");
+      background-repeat: repeat;
+      color: #CCCCCC;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Courier New", Courier, monospace;
+      text-transform: uppercase;
+      margin-top: 0;
+      letter-spacing: 1px;
+    }
+
+    .text-3d {
+      color: #FFFF00;
+      text-shadow: 2px 2px 0px #000000, 4px 4px 0px #333333;
+      font-weight: bold;
+    }
+
+    a { color: #00FFFF; text-decoration: none; }
+    a:hover { color: #FFFFFF; text-decoration: underline; cursor: help; }
+    a:visited { color: #FF00FF; }
+
+    .main-container {
+      width: 800px;
+      margin: 0 auto;
+      background-color: #000033;
+      border: 4px solid #C0C0C0;
+      border-top-color: #FFFFFF;
+      border-left-color: #FFFFFF;
+      border-right-color: #606060;
+      border-bottom-color: #606060;
+    }
+
+    .panel-outset {
+      background-color: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #808080 #808080 #FFFFFF;
+      padding: 5px;
+      color: black;
+    }
+
+    .panel-inset {
+      background-color: #000000;
+      border: 2px solid;
+      border-color: #808080 #FFFFFF #FFFFFF #808080;
+      padding: 10px;
+      color: #00FF00;
+    }
+
+    .nav-btn {
+      display: block;
+      width: 100%;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #000000 #000000 #FFFFFF;
+      text-align: center;
+      padding: 5px 0;
+      font-weight: bold;
+      color: #000000 !important;
+      text-decoration: none !important;
+      margin-bottom: 5px;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+    }
+
+    .nav-btn:active {
+      border-color: #000000 #FFFFFF #FFFFFF #000000;
+      transform: translate(1px, 1px);
+    }
+
+    .marquee-container {
+      background: black;
+      border: 2px inset white;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
+      padding: 5px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .gallery-stats {
+      background: #000;
+      border: 2px inset #fff;
+      padding: 10px;
+      text-align: center;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
+      margin: 15px 0;
+    }
+
+    .photo-grid { text-align: center; }
+
+    .photo-frame {
+      background: #C0C0C0;
+      padding: 5px;
+      display: inline-block;
+      margin: 10px;
+      border: 1px solid #000;
+      box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+      vertical-align: top;
+    }
+
+    .photo-frame img {
+      border: 2px inset #FFF;
+      width: 200px;
+      height: 150px;
+      cursor: zoom-in;
+      object-fit: cover;
+    }
+
+    .photo-frame .caption {
+      font-size: 9px;
+      color: black;
+      text-align: center;
+      margin-top: 3px;
+      font-family: "MS Sans Serif", Arial, sans-serif;
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #lightbox img {
+      border: 5px solid #C0C0C0;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    #lightbox-info {
+      color: white;
+      font-family: "Courier New", monospace;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    #lightbox-close {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    hr.retro {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,255,255,0.75), rgba(0,0,0,0));
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="main-container" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="2" style="background-color:#000022;padding:10px;border-bottom:4px solid #C0C0C0;">
+        <div class="marquee-container">
+          <marquee scrollamount="5" scrolldelay="100">
+            VISUAL ARCHIVE DATABASE — NO FILTERS — AUTO LOAD FROM photos/photos.json
+          </marquee>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <!-- LEFT NAV -->
+      <td valign="top" width="200" style="background-color:#C0C0C0;border-right:2px solid #606060;padding:10px;">
+        <div class="panel-outset" style="margin-bottom:15px;">
+          <h3 style="text-align:center;font-size:14px;margin-bottom:5px;">COMMAND</h3>
+          <a href="index.html" class="nav-btn">HOME</a>
+          <a href="projects.html" class="nav-btn">POSTS</a>
+          <a href="gallery.html" class="nav-btn">PHOTOS</a>
+          <a href="mailto:your-email@example.com" class="nav-btn">CONTACT</a>
+        </div>
+
+        <div class="panel-inset" style="background:black;">
+          <h4 style="color:#FFFF00;margin:0 0 5px 0;border-bottom:1px dashed #666;">HOW TO ADD</h4>
+          <p style="font-size:10px;font-family:'Courier New',monospace;margin:0;line-height:1.6;">
+            1) Coloque imagens em /photos<br>
+            2) Liste em photos/photos.json<br>
+            3) Recarregue a página
+          </p>
+        </div>
+      </td>
+
+      <!-- MAIN -->
+      <td valign="top" style="padding:20px;">
+        <h2 class="text-3d">GALERIA</h2>
+
+        <div class="gallery-stats">
+          IMAGES LOADED: <span id="img-count">0</span>
+        </div>
+
+        <div id="photo-grid" class="photo-grid"></div>
+
+        <hr class="retro" />
+
+        <div style="text-align:center;color:#00ffff;font-family:'Courier New',monospace;">
+          END OF VISUAL ARCHIVE — <a href="#top">SCROLL TO TOP</a>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" align="center" style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
+        <p>
+          <a href="index.html">HOME</a> |
+          <a href="projects.html">POSTS</a> |
+          <a href="mailto:your-email@example.com">CONTACT</a>
+        </p>
+        <p style="font-size:10px;">
+          COPYRIGHT &copy; 1999-2024 YOUR NAME. ALL RIGHTS RESERVED.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Lightbox image" />
+    <div id="lightbox-info"></div>
+    <div id="lightbox-close">CLOSE WINDOW — ESC</div>
+  </div>
+
+  <script>
+    const PHOTO_DIR = "photos/";
+    const MANIFEST = PHOTO_DIR + "photos.json";
+
+    function openLightbox(imageSrc, caption) {
+      const lightbox = document.getElementById("lightbox");
+      document.getElementById("lightbox-img").src = imageSrc;
+      document.getElementById("lightbox-info").textContent = caption || "";
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    function frameFor(item) {
+      const file = (typeof item === "string") ? item : item.file;
+      const caption = (typeof item === "string") ? item : (item.caption || item.file);
+
+      const frame = document.createElement("div");
+      frame.className = "photo-frame";
+
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.alt = caption || file;
+      img.src = PHOTO_DIR + file;
+      img.onclick = () => openLightbox(img.src, caption);
+
+      const cap = document.createElement("div");
+      cap.className = "caption";
+      cap.textContent = caption || file;
+
+      frame.appendChild(img);
+      frame.appendChild(cap);
+      return frame;
+    }
+
+    fetch(MANIFEST)
+      .then(r => r.json())
+      .then(list => {
+        const grid = document.getElementById("photo-grid");
+        grid.innerHTML = "";
+        list.forEach(item => grid.appendChild(frameFor(item)));
+        document.getElementById("img-count").textContent = String(list.length);
+      })
+      .catch(() => {
+        document.getElementById("photo-grid").innerHTML =
+          "<div class='panel-inset'>Erro: não achei photos/photos.json</div>";
+      });
+  </script>
+</body>
+</html>
+
