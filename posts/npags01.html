@@ -1,0 +1,32 @@
+<h2 class="text-3d">AGROSAT GROUND STATION v5.2</h2>
+<p style="color:#00FFFF;font-family:'Courier New',monospace;">
+  DATA: 2025-12-27
+</p>
+
+<hr class="retro" />
+
+<p>Finalmente finalizei a refatoração da <strong>AgroSat Ground Station</strong>! Esse projeto é uma estação terrestre desenvolvida 100% em Python para receber e processar telemetria de sensores em campo e satélites.</p>
+
+<p>
+  <img src="../photos/station_main.jpg" alt="Interface Principal da Estação com Waterfall"
+       style="border:2px inset #FFF; width: 100%;">
+</p>
+
+<p>A grande novidade da versão 5.2 é a flexibilidade. Em vez de reprogramar o software para cada novo sensor, implementei um <strong>Motor de Decodificação</strong> baseado em arquivos YAML. Basicamente, você descreve os bits e bytes em um arquivo de texto, e a estação aprende a ler os dados automaticamente.</p>
+
+<p>O sistema suporta tanto hardware real (SDR RTL-SDR com GNU Radio) quanto modo de simulação via rede UDP, o que facilitou muito os testes sem precisar do rádio conectado o tempo todo.</p>
+
+<p>
+  <img src="../photos/yaml_editor.jpg" alt="Editor de Decoders Integrado"
+       style="border:2px inset #FFF; width: 100%;">
+</p>
+
+<p>Também incluí um visualizador de espectro (Waterfall) em tempo real e um editor integrado para criar novos decoders sem sair da aplicação. O código está todo modularizado e limpo.</p>
+
+<p>Confira o código fonte e as instruções de instalação no link abaixo:</p>
+
+<p style="margin-top: 20px;">
+  <a href="SEU_LINK_DO_GITHUB_AQUI" target="_blank" style="color:#00FFFF; font-weight:bold; text-decoration:none;">
+    [ > ACESSAR REPOSITÓRIO NO GITHUB ]
+  </a>
+</p>
