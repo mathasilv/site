@@ -4,6 +4,11 @@
     "title": "Primeiro post",
     "date": "2025-12-26",
     "excerpt": "Teste rápido do formato blog. Aqui vai um resumo curto."
+  },
+  {
+    "id": "agrosat-v5-2",
+    "title": "AGROSAT GROUND STATION v5.2",
+    "date": "2025-12-27",
+    "excerpt": "Refatoração completa da estação terrestre com motor de decodificação YAML e suporte a hardware SDR."
   }
 ]
-
