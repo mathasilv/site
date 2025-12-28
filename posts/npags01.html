@@ -1,32 +1,54 @@
-<h2 class="text-3d">AGROSAT GROUND STATION v5.2</h2>
+<h2 class="text-3d">POR DENTRO DO PROJETO: NPA GROUND STATION</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
   DATA: 2025-12-27
 </p>
 
 <hr class="retro" />
 
-<p>Finalmente finalizei a refatoração da <strong>AgroSat Ground Station</strong>! Esse projeto é uma estação terrestre desenvolvida 100% em Python para receber e processar telemetria de sensores em campo e satélites.</p>
+<p>Hoje quero apresentar em detalhes a <strong>NPA Ground Station</strong>, uma solução de software completa que desenvolvi para recepção, decodificação e visualização de telemetria via rádio (LoRa/SDR) e rede.</p>
+
+<p>O objetivo principal deste projeto foi resolver um problema comum em estações terrestres: a rigidez. Normalmente, para adicionar um novo sensor ou satélite, é preciso reescrever o código-fonte. Na NPA-GS v5.2, isso mudou radicalmente.</p>
+
+<h3>1. O Coração: Decoder Engine Dinâmico</h3>
+<p>A maior inovação do projeto está no núcleo de processamento. Criei um <em>Decoder Engine</em> que elimina a necessidade de programar "parsers" manualmente.</p>
 
 <p>
-  <img src="../photos/station_main.jpg" alt="Interface Principal da Estação com Waterfall"
+  <img src="../photos/decoder_engine_diagram.png" alt="Diagrama do funcionamento do Decoder Engine"
        style="border:2px inset #FFF; width: 100%;">
 </p>
 
-<p>A grande novidade da versão 5.2 é a flexibilidade. Em vez de reprogramar o software para cada novo sensor, implementei um <strong>Motor de Decodificação</strong> baseado em arquivos YAML. Basicamente, você descreve os bits e bytes em um arquivo de texto, e a estação aprende a ler os dados automaticamente.</p>
+<p>Todo o protocolo de comunicação é definido em arquivos <strong>YAML</strong>. O motor lê esse arquivo e aprende dinamicamente como extrair bits, bytes, inteiros, floats e até arrays de dentro dos pacotes brutos. Isso permite que a estação suporte múltiplos satélites ou sensores simultaneamente, usando o sistema de <em>Multi-Decoder</em> para detecção automática.</p>
 
-<p>O sistema suporta tanto hardware real (SDR RTL-SDR com GNU Radio) quanto modo de simulação via rede UDP, o que facilitou muito os testes sem precisar do rádio conectado o tempo todo.</p>
+<h3>2. Hardware e SDR (Software Defined Radio)</h3>
+<p>Para a camada física, integrei o <strong>GNU Radio</strong> diretamente na aplicação Python. Isso permite conectar dongles RTL-SDR baratos e receber sinais reais do ar.</p>
+
+<ul>
+    <li><strong>Waterfall em Tempo Real:</strong> Implementei um "sniffer" que captura dados da FFT e desenha o espectro de radiofrequência na interface, permitindo visualizar o sinal chegando.</li>
+    <li><strong>Modo Híbrido:</strong> Se você não tem um rádio por perto, o sistema possui um receptor UDP embutido, permitindo testar a estação via rede ou receber dados de outros computadores.</li>
+</ul>
 
 <p>
-  <img src="../photos/yaml_editor.jpg" alt="Editor de Decoders Integrado"
+  <img src="../photos/sdr_setup.jpg" alt="Setup com RTL-SDR e Antena"
        style="border:2px inset #FFF; width: 100%;">
 </p>
 
-<p>Também incluí um visualizador de espectro (Waterfall) em tempo real e um editor integrado para criar novos decoders sem sair da aplicação. O código está todo modularizado e limpo.</p>
+<h3>3. Interface Gráfica e Ferramentas</h3>
+<p>A interface foi construída com <em>CustomTkinter</em> para um visual moderno e responsivo. Além de exibir os dados decodificados e o espectro, desenvolvi um <strong>Editor Integrado</strong>. Você pode criar, editar e validar os schemas YAML dos seus sensores sem nunca fechar a aplicação.</p>
 
-<p>Confira o código fonte e as instruções de instalação no link abaixo:</p>
+<p>Todos os dados recebidos são automaticamente rotacionados e salvos em formato JSONL (JSON Lines), garantindo que nenhum pacote de telemetria seja perdido, mesmo em operações de longa duração.</p>
+
+<h3>Resumo das Tecnologias</h3>
+<ul>
+    <li><strong>Linguagem:</strong> Python 3.10+</li>
+    <li><strong>GUI:</strong> CustomTkinter & Matplotlib</li>
+    <li><strong>DSP/Rádio:</strong> GNU Radio & Osmocom SDR</li>
+    <li><strong>Dados:</strong> YAML (Configuração) & JSONL (Logs)</li>
+</ul>
+
+<p>O projeto é Open Source e convido todos a contribuírem ou testarem com seus próprios sensores LoRa.</p>
 
 <p style="margin-top: 20px;">
   <a href="SEU_LINK_DO_GITHUB_AQUI" target="_blank" style="color:#00FFFF; font-weight:bold; text-decoration:none;">
-    [ > ACESSAR REPOSITÓRIO NO GITHUB ]
+    [ > ACESSAR CÓDIGO FONTE NO GITHUB ]
   </a>
 </p>
