@@ -544,9 +544,6 @@
         <hr class="retro" />
 
         <h2 class="text-3d" id="gallery">VISUAL ARCHIVE</h2>
-        <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-          Preview automático (primeiras 4 imagens do manifesto).
-        </p>
 
         <div id="gallery-preview" style="text-align:center;">
           Carregando preview...
@@ -561,27 +558,9 @@
     <tr>
       <td colspan="2" align="center"
         style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
-        <p>
-          <img src="https://web.archive.org/web/20091027083754/http://geocities.com/Athens/Acropolis/3159/email.gif"
-            style="vertical-align:middle;" alt="Email" loading="lazy">
-          <a href="mailto:msouza449@gmail.com">EMAIL WEBMASTER</a>
-        </p>
-
-        <p id="visitor-counter"
-          style="font-family:'Courier New',monospace;color:#00FF00;border:1px solid #333;display:inline-block;padding:2px 10px;">
-          VISITOR 000001
-        </p>
-
         <p style="font-size:10px;">
           COPYRIGHT &copy; 1999-2026 MATHASILV. ALL RIGHTS RESERVED.<br>
           LAST MODIFIED <span id="last-mod"></span>
-        </p>
-
-        <p>
-          <img src="https://web.archive.org/web/20090829023724/http://geocities.com/SouthBeachMarina/6770/ielogo.gif"
-            alt="IE Compatible" loading="lazy">
-          <img src="https://web.archive.org/web/20091026192237/http://geocities.com/HeartlandAcres/6548/nslogo.gif"
-            alt="Netscape Compatible" loading="lazy">
         </p>
       </td>
     </tr>
@@ -594,16 +573,8 @@
   </div>
 
   <script>
-    // VISITOR COUNTER (simulado via LocalStorage)
+    // INIT
     document.addEventListener("DOMContentLoaded", function () {
-      let count = localStorage.getItem("retroVisitCount");
-      if (!count) count = Math.floor(Math.random() * 500) + 1420;
-      else count = parseInt(count, 10) + 1;
-
-      localStorage.setItem("retroVisitCount", count);
-      const displayCount = count.toString().padStart(6, "0");
-      document.getElementById("visitor-counter").innerText = "VISITOR " + displayCount;
-
       document.getElementById("last-mod").innerText = document.lastModified;
       document.getElementById("marquee-date").innerText = new Date().toLocaleDateString().toUpperCase();
     });
