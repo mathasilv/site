@@ -1,20 +1,71 @@
-<h2 class="text-3d">ESPOTIFY</h2>
+<h2 class="text-3d">ESPOTIFY - DISPLAY SPOTIFY PARA ESP8266/ESP32</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2023-07-13 | LINGUAGEM: C++
+    DATA: 2023-07-13 | LINGUAGEM: C++ | PLATAFORMA: ESP8266/ESP32
 </p>
 
 <hr class="retro" />
 
-<p>Integração entre ESP32 e a API do Spotify. Controle sua música direto de um microcontrolador!</p>
+<p>Sistema embarcado para exibição em tempo real da música atualmente em reprodução no Spotify, utilizando
+    microcontroladores <strong>ESP8266 ou ESP32</strong> com display OLED.</p>
 
-<p>Esse projeto surgiu da vontade de criar um controle físico para o Spotify, usando botões e displays em um dispositivo
-    embarcado.</p>
+<h3>Descrição</h3>
+<p>Este projeto permite visualizar informações da música que está sendo reproduzida na sua conta do Spotify em um
+    <strong>display OLED 128x32</strong>. São exibidos o nome da faixa, artista e uma barra de progresso da reprodução.
+</p>
 
-<h3>Características</h3>
+<h3>Requisitos de Hardware</h3>
 <ul>
-    <li><strong>API:</strong> Conexão direta com a Web API do Spotify</li>
-    <li><strong>Interface:</strong> Controles físicos para play, pause e skip</li>
-    <li><strong>Display:</strong> Exibe informações da música atual</li>
+    <li><strong>Microcontrolador:</strong> ESP8266 (NodeMCU v2) ou ESP32</li>
+    <li><strong>Display:</strong> OLED SSD1306 128x32 pixels (interface I2C)</li>
+    <li><strong>Cabos de conexão</strong></li>
+</ul>
+
+<h3>Esquema de Conexão (I2C)</h3>
+<table style="color:#00FF00;font-family:'Courier New',monospace;font-size:11px;border-collapse:collapse;width:100%;">
+    <tr style="border-bottom:1px dashed #666;">
+        <td style="padding:5px;"><strong>Display</strong></td>
+        <td style="padding:5px;"><strong>ESP8266</strong></td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">SDA</td>
+        <td style="padding:5px;">D2 (GPIO 4)</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">SCL</td>
+        <td style="padding:5px;">D1 (GPIO 5)</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">VCC</td>
+        <td style="padding:5px;">3.3V</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">GND</td>
+        <td style="padding:5px;">GND</td>
+    </tr>
+</table>
+
+<h3>Bibliotecas Utilizadas</h3>
+<ul>
+    <li><strong>ESP8266WiFi / WiFi:</strong> Conexão com a rede</li>
+    <li><strong>ESP8266HTTPClient / HTTPClient:</strong> Requisições HTTP</li>
+    <li><strong>ArduinoJson:</strong> Parsing de JSON</li>
+    <li><strong>Adafruit_SSD1306:</strong> Controle do display OLED</li>
+    <li><strong>Base64:</strong> Codificação para autenticação</li>
+</ul>
+
+<h3>Configuração</h3>
+<ol>
+    <li>Criar aplicativo no <a href="https://developer.spotify.com" target="_blank">Spotify Developer</a></li>
+    <li>Configurar Client ID e Client Secret no código</li>
+    <li>Obter Refresh Token via OAuth2</li>
+    <li>Compilar e fazer upload para o ESP</li>
+</ol>
+
+<h3>Limitações</h3>
+<ul>
+    <li>Requer conta Spotify Premium para algumas funcionalidades</li>
+    <li>Token de acesso expira a cada hora (renovado automaticamente)</li>
+    <li>Display pequeno limita quantidade de texto visível</li>
 </ul>
 
 <p style="margin-top: 20px;">

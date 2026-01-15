@@ -1,21 +1,57 @@
-<h2 class="text-3d">ORBITSCOUT</h2>
+<h2 class="text-3d">ORBITSCOUT: STANDALONE SATELLITE TRACKER</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2025-04-13 | LINGUAGEM: C | LICENÇA: MIT
+    DATA: 2025-04-13 | LINGUAGEM: C | LICENÇA: MIT | PLATAFORMA: ESP32
 </p>
 
 <hr class="retro" />
 
-<p>Rastreador de satélites standalone. Saiba onde estão os satélites em tempo real sem depender de apps externos.</p>
+<p style="text-align:center;">
+    <img src="../photos/orbitscout-device.jpeg" alt="OrbitScout Device" style="border:2px inset #FFF; max-width:300px;">
+</p>
 
-<p>Projeto desenvolvido para rodar em hardware embarcado com display, mostrando posição e passagens de satélites como a
-    ISS.</p>
+<h3>Visão Geral</h3>
+<p><strong>OrbitScout</strong> é um projeto open-source que transforma um microcontrolador ESP32 em uma estação de
+    acompanhamento de satélites. Com uma interface gráfica em um display TFT, módulos de GPS, sensor de orientação e
+    monitoramento de bateria, o OrbitScout permite prever passagens de satélites, visualizar trajetórias em tempo real e
+    até receber notificações sonoras quando uma passagem se aproxima.</p>
 
-<h3>Características</h3>
+<h3>Funcionalidades</h3>
 <ul>
-    <li><strong>TLE:</strong> Usa dados TLE para cálculo de órbitas</li>
-    <li><strong>Standalone:</strong> Funciona offline após download dos TLEs</li>
-    <li><strong>Display:</strong> Visualização em tempo real da posição</li>
+    <li><strong>Rastreamento em Tempo Real:</strong> Utiliza o modelo SGP4 para calcular a posição dos satélites a
+        partir dos dados TLE</li>
+    <li><strong>Integração com GPS:</strong> Obtém a localização exata do usuário para cálculos precisos</li>
+    <li><strong>Sensoriamento de Orientação:</strong> Sensor BNO055 para rastreamento manual</li>
+    <li><strong>Interface Gráfica Intuitiva:</strong> Menus interativos com barras de progresso e visualizações
+        dinâmicas</li>
+    <li><strong>Controle de Backlight:</strong> Ajuste de brilho via botões físicos</li>
+    <li><strong>Monitoramento de Bateria:</strong> Leitura analógica com conversão para tensão e porcentagem</li>
+    <li><strong>Conectividade WiFi:</strong> Portal cativo para configuração e download automático de TLEs</li>
+    <li><strong>Sistema de Notificações:</strong> Alertas visuais e sonoros para passagens</li>
 </ul>
+
+<h3>Requisitos de Hardware</h3>
+<ul>
+    <li><strong>Microcontrolador:</strong> ESP32</li>
+    <li><strong>Display:</strong> TFT compatível com TFT_eSPI</li>
+    <li><strong>GPS:</strong> Módulo Neo-6M</li>
+    <li><strong>Sensor de Orientação:</strong> Adafruit BNO055</li>
+    <li><strong>Buzzer:</strong> Para alertas sonoros</li>
+    <li><strong>Botões Físicos:</strong> NEXT, PREV, SELECT, BACK</li>
+</ul>
+
+<h3>Bibliotecas Necessárias</h3>
+<ul>
+    <li>TFT_eSPI</li>
+    <li>TinyGPSPlus</li>
+    <li>Adafruit_BNO055</li>
+    <li>TimeLib</li>
+    <li>WiFiManager</li>
+    <li>Sgp4</li>
+</ul>
+
+<h3>Fontes de TLE Suportadas</h3>
+<p>O sistema permite escolher entre diversas fontes para manter os dados de órbita atualizados: NOAA, Weather,
+    Engineering, Amateur, etc.</p>
 
 <p style="margin-top: 20px;">
     <a href="https://github.com/mathasilv/ORBITSCOUT" target="_blank"

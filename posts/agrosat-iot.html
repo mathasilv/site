@@ -1,21 +1,53 @@
 <h2 class="text-3d">AGROSAT-IOT</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2025-11-04 | LINGUAGEM: C++
+    DATA: 2025-11-04 | LINGUAGEM: C++ | PLATAFORMA: ESP32
 </p>
 
 <hr class="retro" />
 
-<p>Sistema de IoT para agricultura de precisão com comunicação via satélite. O projeto combina sensores de campo com
-    transmissão de dados para monitoramento remoto de lavouras.</p>
+<p>Sistema embarcado para <strong>CubeSat 1U</strong> desenvolvido para monitoramento remoto de cultivos agrícolas em
+    regiões sem cobertura de internet ou telefonia celular.</p>
 
-<p>Desenvolvido como parte de um trabalho maior de pesquisa em telecomunicações para áreas rurais sem cobertura de
-    internet convencional.</p>
+<h3>O Problema</h3>
+<p>Grandes áreas agrícolas no Brasil, especialmente em regiões do Centro-Oeste e Norte, não possuem cobertura de
+    internet ou sinal de celular. Isso impede que produtores rurais utilizem tecnologias modernas de monitoramento de
+    suas lavouras, como sensores de umidade do solo, temperatura e sistemas de irrigação inteligente.</p>
 
-<h3>Características</h3>
+<h3>A Solução</h3>
+<p>O AgroSat-IoT resolve esse problema utilizando comunicação via <strong>rádio LoRa</strong>, que possui longo alcance
+    e baixo consumo de energia. O sistema funciona da seguinte forma:</p>
+
+<ol>
+    <li>Sensores instalados nas propriedades rurais (nós terrestres) coletam dados sobre as condições do solo e ambiente
+    </li>
+    <li>Esses dados são transmitidos via rádio para o satélite quando ele passa sobre a região</li>
+    <li>O satélite armazena os dados recebidos (modelo <strong>Store-and-Forward</strong>)</li>
+    <li>Quando o satélite passa sobre uma estação base com internet, os dados são retransmitidos</li>
+    <li>Os dados ficam disponíveis para consulta pelo produtor rural</li>
+</ol>
+
+<h3>Funcionalidades Principais</h3>
 <ul>
-    <li><strong>Hardware:</strong> Baseado em ESP32 com módulos LoRa</li>
-    <li><strong>Telemetria:</strong> Coleta dados de temperatura, umidade e outros sensores</li>
-    <li><strong>Comunicação:</strong> Suporte a LoRa e protocolos satelitais</li>
+    <li><strong>Relay Store-and-Forward:</strong> Armazena dados recebidos para retransmissão posterior</li>
+    <li><strong>Gerenciamento de Múltiplos Nós:</strong> Suporta vários sensores terrestres simultaneamente</li>
+    <li><strong>Controle Automático de Energia:</strong> Otimiza consumo de bateria</li>
+    <li><strong>Monitoramento de Saúde:</strong> Supervisão contínua do sistema</li>
+    <li><strong>Sincronização de Tempo:</strong> Mantém precisão temporal entre dispositivos</li>
+</ul>
+
+<h3>Hardware Utilizado</h3>
+<ul>
+    <li><strong>Placa Principal:</strong> ESP32 com módulo LoRa</li>
+    <li><strong>Sensores:</strong> GPS, IMU, temperatura, umidade</li>
+    <li><strong>Armazenamento:</strong> Cartão SD para logs</li>
+    <li><strong>Alimentação:</strong> Baterias Li-Ion com painel solar</li>
+</ul>
+
+<h3>Modos de Operação</h3>
+<ul>
+    <li><strong>Modo Pré-Voo (PREFLIGHT):</strong> Configuração e testes</li>
+    <li><strong>Modo Voo (FLIGHT):</strong> Operação normal em órbita</li>
+    <li><strong>Modo Seguro (SAFE):</strong> Economia de energia em situações críticas</li>
 </ul>
 
 <p style="margin-top: 20px;">

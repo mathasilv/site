@@ -1,21 +1,88 @@
 <h2 class="text-3d">HOMELAB-MONITOR</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2026-01-13 | LINGUAGEM: Python | LICENÇA: MIT
+    DATA: 2026-01-13 | LINGUAGEM: Python + C++ | LICENÇA: MIT
 </p>
 
 <hr class="retro" />
 
-<p>Sistema de monitoramento para homelab. Acompanhe a saúde dos seus servidores e serviços de casa.</p>
-
-<p>Feito para quem tem um servidor em casa e quer ter visibilidade sobre CPU, memória, disco e status dos containers.
+<p style="text-align:center;">
+    <img src="../photos/homelab-display.jpg" alt="HomeLab Monitor Display"
+        style="border:2px inset #FFF; max-width:100%;">
 </p>
 
-<h3>Características</h3>
+<p>Sistema de monitoramento de servidor em tempo real com display TFT estilo <strong>CRT âmbar</strong>. Exibe
+    estatísticas do sistema em uma tela 320x240 conectada a um microcontrolador STM32 (BlackPill F411CE).</p>
+
+<h3>Sobre o Projeto</h3>
+<p>Este projeto consiste em dois componentes principais:</p>
+<ol>
+    <li><strong>Firmware:</strong> Código para o microcontrolador STM32 que controla o display TFT</li>
+    <li><strong>Server Client:</strong> Script Python que coleta métricas do servidor e envia para o display</li>
+</ol>
+
+<h3>Métricas Monitoradas</h3>
 <ul>
-    <li><strong>Métricas:</strong> Coleta de CPU, RAM, disco e rede</li>
-    <li><strong>Alertas:</strong> Notificações quando algo sai do normal</li>
-    <li><strong>Dashboard:</strong> Interface web para visualização</li>
+    <li>Endereço IP do servidor</li>
+    <li>Uptime do sistema</li>
+    <li>Load Average (1, 5, 15 min)</li>
+    <li>Uso de CPU com temperatura</li>
+    <li>Uso de RAM e Swap</li>
+    <li>Uso de disco</li>
+    <li>Tráfego de rede (RX/TX)</li>
+    <li>I/O de disco (leitura/escrita)</li>
+    <li>Contagem de processos</li>
+    <li>Clientes SMB/Samba conectados</li>
+    <li>Conexões TCP ativas</li>
 </ul>
+
+<h3>Hardware</h3>
+<table style="color:#00FF00;font-family:'Courier New',monospace;font-size:11px;border-collapse:collapse;width:100%;">
+    <tr style="border-bottom:1px dashed #666;">
+        <td style="padding:5px;"><strong>Componente</strong></td>
+        <td style="padding:5px;"><strong>Especificação</strong></td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">Microcontrolador</td>
+        <td style="padding:5px;">STM32F411CE (BlackPill)</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">Display</td>
+        <td style="padding:5px;">TFT 2.4" 320x240 ST7789</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">Programador</td>
+        <td style="padding:5px;">ST-Link V2</td>
+    </tr>
+    <tr>
+        <td style="padding:5px;">Conexão</td>
+        <td style="padding:5px;">USB (CDC Serial)</td>
+    </tr>
+</table>
+
+<h3>Protocolo de Comunicação</h3>
+<p>Comunicação serial usando formato <code>key=value</code>, terminando com <code>END</code>:</p>
+<pre style="background:#000;border:1px solid #333;padding:10px;color:#00FF00;font-size:10px;">
+ip=192.168.1.100
+up=5d 12h 30m
+cpu_pct=45
+cpu_temp=52
+ram_pct=67
+END
+</pre>
+
+<h3>Instalação</h3>
+<p><strong>Firmware:</strong></p>
+<pre style="background:#000;border:1px solid #333;padding:10px;color:#00FF00;font-size:10px;">
+cd firmware
+pio run -t upload
+</pre>
+
+<p><strong>Server Client:</strong></p>
+<pre style="background:#000;border:1px solid #333;padding:10px;color:#00FF00;font-size:10px;">
+cd server-client
+pip install -r requirements.txt
+python src/monitor.py /dev/ttyACM0
+</pre>
 
 <p style="margin-top: 20px;">
     <a href="https://github.com/mathasilv/homelab-monitor" target="_blank"

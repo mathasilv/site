@@ -1,19 +1,56 @@
 <h2 class="text-3d">SMART-PLANT-V4</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2023-07-10 | LINGUAGEM: C++
+    DATA: 2023-07-10 | LINGUAGEM: C++ | PLATAFORMA: ESP8266/Arduino
 </p>
 
 <hr class="retro" />
 
-<p>Sistema de automação para cuidar das suas plantas. Rega automática baseada em sensores de umidade do solo.</p>
+<p>Sistema de automação para cuidar das suas plantas de forma inteligente. A quarta versão do projeto traz melhorias
+    significativas na calibração dos sensores e algoritmos de economia de água.</p>
 
-<p>Quarta versão do projeto, com melhorias na calibração dos sensores e economia de água.</p>
+<h3>O Problema</h3>
+<p>Manter plantas saudáveis requer atenção constante à umidade do solo. Esquecimentos podem levar à morte da planta por
+    falta d'água, enquanto regas excessivas causam apodrecimento das raízes.</p>
 
-<h3>Características</h3>
+<h3>A Solução</h3>
+<p>O Smart-Plant monitora continuamente a umidade do solo e ativa a irrigação automaticamente apenas quando necessário,
+    garantindo a quantidade ideal de água para cada planta.</p>
+
+<h3>Funcionalidades</h3>
 <ul>
-    <li><strong>Sensores:</strong> Monitora umidade do solo e luminosidade</li>
-    <li><strong>Automação:</strong> Rega automática quando o solo está seco</li>
-    <li><strong>WiFi:</strong> Notificações e controle remoto via app</li>
+    <li><strong>Monitoramento Contínuo:</strong> Leitura periódica da umidade do solo</li>
+    <li><strong>Irrigação Automática:</strong> Bomba acionada quando o solo está seco</li>
+    <li><strong>Sensor de Luminosidade:</strong> Monitora a luz ambiente (opcional)</li>
+    <li><strong>WiFi Integrado:</strong> Notificações e controle remoto via smartphone</li>
+    <li><strong>Economia de Água:</strong> Algoritmo inteligente evita desperdício</li>
+    <li><strong>Calibração Fácil:</strong> Ajuste do limiar de umidade para cada tipo de planta</li>
+</ul>
+
+<h3>Hardware Necessário</h3>
+<ul>
+    <li><strong>Microcontrolador:</strong> ESP8266 (NodeMCU) ou Arduino</li>
+    <li><strong>Sensor de Umidade:</strong> Sonda capacitiva ou resistiva</li>
+    <li><strong>Mini Bomba d'Água:</strong> 5V DC</li>
+    <li><strong>Relé:</strong> Módulo para acionamento da bomba</li>
+    <li><strong>Reservatório:</strong> Recipiente para água</li>
+    <li><strong>Mangueira:</strong> Conexão entre bomba e vaso</li>
+</ul>
+
+<h3>Melhorias da v4</h3>
+<ul>
+    <li>Calibração automática do sensor de umidade</li>
+    <li>Algoritmo anti-oscilação para evitar liga/desliga frequente</li>
+    <li>Suporte a múltiplas plantas (expansível)</li>
+    <li>Interface web para configuração</li>
+    <li>Logs de irrigação com timestamps</li>
+</ul>
+
+<h3>Parâmetros Configuráveis</h3>
+<ul>
+    <li><strong>Limiar de Umidade:</strong> Ponto em que a irrigação é ativada</li>
+    <li><strong>Duração da Rega:</strong> Tempo de acionamento da bomba</li>
+    <li><strong>Intervalo de Leitura:</strong> Frequência de checagem do sensor</li>
+    <li><strong>Modo:</strong> Automático ou manual</li>
 </ul>
 
 <p style="margin-top: 20px;">

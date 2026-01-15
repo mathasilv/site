@@ -1,20 +1,75 @@
 <h2 class="text-3d">SATTRACKER-STANDALONE</h2>
 <p style="color:#00FFFF;font-family:'Courier New',monospace;">
-    DATA: 2024-11-30 | LINGUAGEM: C
+    DATA: 2024-11-30 | LINGUAGEM: C | PLATAFORMA: ESP32
 </p>
 
 <hr class="retro" />
 
-<p>Outra implementação de rastreador de satélites, focada em simplicidade e portabilidade.</p>
+<p style="text-align:center;">
+    <img src="../photos/sattracker-demo.gif" alt="SatTracker Demo" style="border:2px inset #FFF; max-width:100%;">
+</p>
 
-<p>Versão mais enxuta do rastreador para uso em plataformas com recursos limitados.</p>
+<p>Rastreador de satélites baseado no <strong>ESP32</strong> que permite selecionar um satélite de uma lista predefinida
+    e visualizar informações de posicionamento em tempo real em um display OLED. Usa dados de GPS para calcular a
+    posição atual do satélite selecionado e prever horários de passagem.</p>
 
-<h3>Características</h3>
+<h3>Funcionalidades</h3>
 <ul>
-    <li><strong>Leve:</strong> Código otimizado para microcontroladores</li>
-    <li><strong>Portátil:</strong> Adaptável para diferentes plataformas</li>
-    <li><strong>Preciso:</strong> Cálculos orbitais usando SGP4</li>
+    <li><strong>Seleção de Satélites:</strong> Navegue por uma lista e selecione qual rastrear</li>
+    <li><strong>Informações em Tempo Real:</strong> Hora atual, nome do satélite, azimute, elevação e previsão da
+        próxima passagem</li>
+    <li><strong>Interface Interativa:</strong> Botões para navegação no menu</li>
+    <li><strong>Display OLED:</strong> Informações claras e legíveis</li>
 </ul>
+
+<h3>Hardware Necessário</h3>
+<ul>
+    <li><strong>ESP32 Dev Kit:</strong> Processamento principal</li>
+    <li><strong>Módulo GPS:</strong> NEO-6M para localização e tempo</li>
+    <li><strong>Display OLED:</strong> SSD1306 128x32 pixels</li>
+    <li><strong>Botões de Navegação:</strong>
+        <ul>
+            <li>"Next" - GPIO 25</li>
+            <li>"Previous" - GPIO 26</li>
+            <li>"Select" - GPIO 27</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Esquemático</h3>
+<p style="text-align:center;">
+    <img src="../photos/sattracker-schematic.png" alt="Schematic" style="border:2px inset #FFF; max-width:100%;">
+</p>
+
+<h3>Bibliotecas Utilizadas</h3>
+<ul>
+    <li><strong>TinyGPSPlus:</strong> Processamento de dados GPS</li>
+    <li><strong>Sgp4:</strong> Cálculos de órbita</li>
+    <li><strong>Ticker:</strong> Temporização periódica</li>
+    <li><strong>Adafruit GFX + SSD1306:</strong> Driver do display OLED</li>
+</ul>
+
+<h3>Satélites Incluídos</h3>
+<ul style="columns:2;">
+    <li>NOAA 18</li>
+    <li>NOAA 19</li>
+    <li>NOAA 15</li>
+    <li>METEOR M2-3</li>
+    <li>METEOR M2-4</li>
+    <li>METEOR M2-2</li>
+    <li>ISS (ZARYA)</li>
+    <li>GOES 17</li>
+    <li>GOES 16</li>
+</ul>
+
+<h3>Como Usar</h3>
+<ol>
+    <li>Ligue o dispositivo - o menu de seleção aparece</li>
+    <li>Use "Next/Previous" para navegar pelos satélites</li>
+    <li>Pressione "Select" para confirmar</li>
+    <li>Visualize azimute, elevação e próxima passagem</li>
+    <li>Pressione "Select" novamente para voltar ao menu</li>
+</ol>
 
 <p style="margin-top: 20px;">
     <a href="https://github.com/mathasilv/SatTracker-Standalone" target="_blank"
