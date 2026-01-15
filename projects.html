@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,9 @@
       padding: 20px;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: "Courier New", Courier, monospace;
       text-transform: uppercase;
       margin-top: 0;
@@ -29,9 +32,20 @@
       font-weight: bold;
     }
 
-    a { color: #00FFFF; text-decoration: none; }
-    a:hover { color: #FFFFFF; text-decoration: underline; cursor: help; }
-    a:visited { color: #FF00FF; }
+    a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+      cursor: help;
+    }
+
+    a:visited {
+      color: #FF00FF;
+    }
 
     .main-container {
       width: 800px;
@@ -107,7 +121,7 @@
     hr.retro {
       border: 0;
       height: 1px;
-      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,255,255,0.75), rgba(0,0,0,0));
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 255, 255, 0.75), rgba(0, 0, 0, 0));
       margin: 20px 0;
     }
   </style>
@@ -120,14 +134,16 @@
         <table width="100%">
           <tr>
             <td width="100">
-              <img src="https://blob.gifcities.org/gifcities/4WF75CYWKWVJN7A7CRZ7HE2JEZURBJFE.gif" width="80" alt="Spinning Planet" loading="lazy">
+              <img src="https://blob.gifcities.org/gifcities/4WF75CYWKWVJN7A7CRZ7HE2JEZURBJFE.gif" width="80"
+                alt="Spinning Planet" loading="lazy">
             </td>
             <td align="center">
-              <h1 class="text-3d" style="font-size:32px;margin:0;">YOUR NAME'S LAB</h1>
+              <h1 class="text-3d" style="font-size:32px;margin:0;">MATHASILV's LAB</h1>
               <p style="color:#00FFFF;font-family:'Courier New',monospace;margin:5px;">POST ARCHIVE</p>
             </td>
             <td width="100" align="right">
-              <img src="https://blob.gifcities.org/gifcities/2XEZJUDE3HMBZXWK5V4M7JK27WCF6JDF.gif" width="80" alt="Satellite" loading="lazy">
+              <img src="https://blob.gifcities.org/gifcities/2XEZJUDE3HMBZXWK5V4M7JK27WCF6JDF.gif" width="80"
+                alt="Satellite" loading="lazy">
             </td>
           </tr>
         </table>
@@ -148,7 +164,7 @@
           <a href="index.html" class="nav-btn">HOME</a>
           <a href="projects.html" class="nav-btn">POSTS</a>
           <a href="gallery.html" class="nav-btn">PHOTOS</a>
-          <a href="mailto:your-email@example.com" class="nav-btn">CONTACT</a>
+          <a href="mailto:msouza449@gmail.com" class="nav-btn">CONTACT</a>
         </div>
 
         <div class="panel-inset" style="background:black;">
@@ -176,14 +192,15 @@
     </tr>
 
     <tr>
-      <td colspan="2" align="center" style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
+      <td colspan="2" align="center"
+        style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
         <p>
           <a href="index.html">RETURN TO HOME</a> |
           <a href="gallery.html">VIEW GALLERY</a> |
-          <a href="mailto:your-email@example.com">CONTACT</a>
+          <a href="mailto:msouza449@gmail.com">CONTACT</a>
         </p>
         <p style="font-size:10px;">
-          COPYRIGHT &copy; 1999-2024 YOUR NAME. ALL RIGHTS RESERVED.
+          COPYRIGHT &copy; 1999-2026 MATHASILV. ALL RIGHTS RESERVED.
         </p>
       </td>
     </tr>
@@ -194,7 +211,7 @@
       .then(r => r.json())
       .then(posts => {
         const root = document.getElementById("post-list");
-        const sorted = posts.slice().sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+        const sorted = posts.slice().sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
         if (!sorted.length) {
           root.innerHTML = "<div class='panel-inset'>Nenhum post ainda.</div>";
@@ -228,5 +245,5 @@
       });
   </script>
 </body>
-</html>
 
+</html>

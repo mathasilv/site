@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,9 @@
       padding: 20px;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: "Courier New", Courier, monospace;
       text-transform: uppercase;
       margin-top: 0;
@@ -29,9 +32,20 @@
       font-weight: bold;
     }
 
-    a { color: #00FFFF; text-decoration: none; }
-    a:hover { color: #FFFFFF; text-decoration: underline; cursor: help; }
-    a:visited { color: #FF00FF; }
+    a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+      cursor: help;
+    }
+
+    a:visited {
+      color: #FF00FF;
+    }
 
     .main-container {
       width: 800px;
@@ -118,7 +132,11 @@
       margin: 10px 0;
     }
 
-    .view-all-btn:hover { background: #0000AA; color: #FFFFFF !important; }
+    .view-all-btn:hover {
+      background: #0000AA;
+      color: #FFFFFF !important;
+    }
+
     .view-all-btn:active {
       border-color: #000044 #00FFFF #00FFFF #000044;
       transform: translate(2px, 2px);
@@ -130,7 +148,7 @@
       display: inline-block;
       margin: 5px;
       border: 1px solid #000;
-      box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
       vertical-align: top;
     }
 
@@ -145,9 +163,11 @@
     #lightbox {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
       z-index: 9999;
       justify-content: center;
       align-items: center;
@@ -172,12 +192,25 @@
     hr.retro {
       border: 0;
       height: 1px;
-      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,255,255,0.75), rgba(0,0,0,0));
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 255, 255, 0.75), rgba(0, 0, 0, 0));
       margin: 20px 0;
     }
 
-    .blink { animation: blink 1s steps(1, end) infinite; }
-    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+    .blink {
+      animation: blink 1s steps(1, end) infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -188,14 +221,16 @@
         <table width="100%">
           <tr>
             <td width="100">
-              <img src="https://blob.gifcities.org/gifcities/4WF75CYWKWVJN7A7CRZ7HE2JEZURBJFE.gif" width="80" alt="Spinning Planet" loading="lazy">
+              <img src="https://blob.gifcities.org/gifcities/4WF75CYWKWVJN7A7CRZ7HE2JEZURBJFE.gif" width="80"
+                alt="Spinning Planet" loading="lazy">
             </td>
             <td align="center">
               <h1 class="text-3d" style="font-size:32px;margin:0;">MATHASILV's LAB</h1>
               <p style="color:#00FFFF;font-family:'Courier New',monospace;margin:5px;">EXPLORATION SCIENCE CODE</p>
             </td>
             <td width="100" align="right">
-              <img src="https://blob.gifcities.org/gifcities/2XEZJUDE3HMBZXWK5V4M7JK27WCF6JDF.gif" width="80" alt="Satellite" loading="lazy">
+              <img src="https://blob.gifcities.org/gifcities/2XEZJUDE3HMBZXWK5V4M7JK27WCF6JDF.gif" width="80"
+                alt="Satellite" loading="lazy">
             </td>
           </tr>
         </table>
@@ -216,7 +251,7 @@
           <a href="index.html" class="nav-btn">HOME</a>
           <a href="projects.html" class="nav-btn">POSTS</a>
           <a href="gallery.html" class="nav-btn">PHOTOS</a>
-          <a href="msouza449@gmail.com" class="nav-btn">CONTACT</a>
+          <a href="mailto:msouza449@gmail.com" class="nav-btn">CONTACT</a>
         </div>
 
         <div class="panel-inset" style="background:black;margin-bottom:15px;">
@@ -227,254 +262,265 @@
             <li>12/26 Gallery manifest enabled</li>
           </ul>
         </div>
-        
-<div class="panel-inset" style="background:black;margin-bottom:15px;">
-  <h4 style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;display:flex;align-items:center;justify-content:space-between;">
-    <span>SYNTHWAVE RADIO</span>
 
-    <span id="live-indicator" class="live-off" style="display:inline-flex;align-items:center;gap:6px;">
-      <span class="live-dot"></span>
-      <span style="font-family:'Courier New',monospace;font-size:11px;color:#FF4444;">LIVE</span>
-    </span>
-  </h4>
+        <div class="panel-inset" style="background:black;margin-bottom:15px;">
+          <h4
+            style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;display:flex;align-items:center;justify-content:space-between;">
+            <span>SYNTHWAVE RADIO</span>
 
-  <div style="color:#00FF00;font-family:'Courier New',monospace;font-size:10px;line-height:1.5;">
-    <div style="margin-bottom:6px;color:#00FFFF;">
-      STATION: <a href="https://nightride.fm" target="_blank" rel="noopener">Nightride.FM</a>
-    </div>
+            <span id="live-indicator" class="live-off" style="display:inline-flex;align-items:center;gap:6px;">
+              <span class="live-dot"></span>
+              <span style="font-family:'Courier New',monospace;font-size:11px;color:#FF4444;">LIVE</span>
+            </span>
+          </h4>
 
-    <div id="rp-status" style="margin-bottom:8px;">STATUS: IDLE</div>
+          <div style="color:#00FF00;font-family:'Courier New',monospace;font-size:10px;line-height:1.5;">
+            <div style="margin-bottom:6px;color:#00FFFF;">
+              STATION: <a href="https://nightride.fm" target="_blank" rel="noopener">Nightride.FM</a>
+            </div>
 
-    <div style="display:flex;gap:6px;justify-content:space-between;margin-bottom:8px;">
-      <button class="retro-btn" id="rp-play">PLAY</button>
-      <button class="retro-btn" id="rp-pause">PAUSE</button>
-      <button class="retro-btn" id="rp-stop">STOP</button>
-    </div>
+            <div id="rp-status" style="margin-bottom:8px;">STATUS: IDLE</div>
 
-    <div style="display:flex;align-items:center;gap:8px;">
-      VOL:
-      <input id="rp-vol" class="retro-range" type="range" min="0" max="1" step="0.01" value="0.7" />
-      <span style="margin-left:auto;color:#00FFFF;">STREAM</span>
-    </div>
-  </div>
+            <div style="display:flex;gap:6px;justify-content:space-between;margin-bottom:8px;">
+              <button class="retro-btn" id="rp-play">PLAY</button>
+              <button class="retro-btn" id="rp-pause">PAUSE</button>
+              <button class="retro-btn" id="rp-stop">STOP</button>
+            </div>
 
-  <audio id="rp-audio" preload="none" crossorigin="anonymous">
-    <source src="https://stream.nightride.fm/nightride.m4a" type="audio/mp4">
-  </audio>
+            <div style="display:flex;align-items:center;gap:8px;">
+              VOL:
+              <input id="rp-vol" class="retro-range" type="range" min="0" max="1" step="0.01" value="0.7" />
+              <span style="margin-left:auto;color:#00FFFF;">STREAM</span>
+            </div>
+          </div>
 
-  <style>
-    /* botão Win9x */
-    .retro-btn {
-      width: 100%;
-      background: #C0C0C0;
-      border: 2px solid;
-      border-color: #FFFFFF #000000 #000000 #FFFFFF;
-      padding: 4px 0;
-      font-weight: bold;
-      color: #000000;
-      font-family: "MS Sans Serif", Arial, sans-serif;
-      font-size: 11px;
-      cursor: pointer;
-    }
-    .retro-btn:active {
-      border-color: #000000 #FFFFFF #FFFFFF #000000;
-      transform: translate(1px, 1px);
-    }
+          <audio id="rp-audio" preload="none" crossorigin="anonymous">
+            <source src="https://stream.nightride.fm/nightride.m4a" type="audio/mp4">
+          </audio>
 
-    /* slider retrô (cinza) */
-    .retro-range{
-      width: 100%;
-      background: transparent;
-      -webkit-appearance: none;
-      appearance: none;
-      height: 18px;
-      cursor: pointer;
-    }
-    .retro-range::-webkit-slider-runnable-track{
-      height: 6px;
-      background: #C0C0C0;
-      border: 2px solid;
-      border-color: #808080 #FFFFFF #FFFFFF #808080;
-    }
-    .retro-range::-webkit-slider-thumb{
-      -webkit-appearance: none;
-      width: 12px;
-      height: 16px;
-      background: #C0C0C0;
-      border: 2px solid;
-      border-color: #FFFFFF #000000 #000000 #FFFFFF;
-      margin-top: -7px;
-    }
-    .retro-range::-moz-range-track{
-      height: 6px;
-      background: #C0C0C0;
-      border: 2px solid;
-      border-color: #808080 #FFFFFF #FFFFFF #808080;
-    }
-    .retro-range::-moz-range-thumb{
-      width: 12px;
-      height: 16px;
-      background: #C0C0C0;
-      border: 2px solid;
-      border-color: #FFFFFF #000000 #000000 #FFFFFF;
-      border-radius: 0;
-    }
+          <style>
+            /* botão Win9x */
+            .retro-btn {
+              width: 100%;
+              background: #C0C0C0;
+              border: 2px solid;
+              border-color: #FFFFFF #000000 #000000 #FFFFFF;
+              padding: 4px 0;
+              font-weight: bold;
+              color: #000000;
+              font-family: "MS Sans Serif", Arial, sans-serif;
+              font-size: 11px;
+              cursor: pointer;
+            }
 
-    /* LED LIVE */
-    .live-dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #550000;
-      border: 1px solid #FF4444;
-      box-shadow: 0 0 0 rgba(255,0,0,0);
-    }
+            .retro-btn:active {
+              border-color: #000000 #FFFFFF #FFFFFF #000000;
+              transform: translate(1px, 1px);
+            }
 
-    /* piscando “hard” (sem fade) */
-    .live-on .live-dot{
-      animation: liveblink 1s steps(1, end) infinite;
-    }
-    @keyframes liveblink {
-      0%, 49% {
-        background: #FF0000;
-        box-shadow: 0 0 8px rgba(255,0,0,0.8);
-      }
-      50%, 100% {
-        background: #550000;
-        box-shadow: 0 0 0 rgba(255,0,0,0);
-      }
-    }
+            /* slider retrô (cinza) */
+            .retro-range {
+              width: 100%;
+              background: transparent;
+              -webkit-appearance: none;
+              appearance: none;
+              height: 18px;
+              cursor: pointer;
+            }
 
-    .live-off .live-dot{
-      background: #330000;
-      box-shadow: none;
-      opacity: 0.6;
-    }
-  </style>
+            .retro-range::-webkit-slider-runnable-track {
+              height: 6px;
+              background: #C0C0C0;
+              border: 2px solid;
+              border-color: #808080 #FFFFFF #FFFFFF #808080;
+            }
 
-  <script>
-    (function () {
-      const a = document.getElementById("rp-audio");
-      const playBtn = document.getElementById("rp-play");
-      const pauseBtn = document.getElementById("rp-pause");
-      const stopBtn = document.getElementById("rp-stop");
-      const vol = document.getElementById("rp-vol");
-      const statusEl = document.getElementById("rp-status");
-      const live = document.getElementById("live-indicator");
+            .retro-range::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 12px;
+              height: 16px;
+              background: #C0C0C0;
+              border: 2px solid;
+              border-color: #FFFFFF #000000 #000000 #FFFFFF;
+              margin-top: -7px;
+            }
 
-      function setStatus(s) { statusEl.textContent = "STATUS: " + s; }
-      function setLive(on) {
-        live.classList.toggle("live-on", on);
-        live.classList.toggle("live-off", !on);
-      }
+            .retro-range::-moz-range-track {
+              height: 6px;
+              background: #C0C0C0;
+              border: 2px solid;
+              border-color: #808080 #FFFFFF #FFFFFF #808080;
+            }
 
-      setLive(false);
-      a.volume = Number(vol.value);
-      vol.addEventListener("input", () => { a.volume = Number(vol.value); });
+            .retro-range::-moz-range-thumb {
+              width: 12px;
+              height: 16px;
+              background: #C0C0C0;
+              border: 2px solid;
+              border-color: #FFFFFF #000000 #000000 #FFFFFF;
+              border-radius: 0;
+            }
 
-      playBtn.addEventListener("click", async () => {
-        try {
-          setStatus("CONNECTING...");
-          await a.play();
-        } catch (e) {
-          setStatus("CLICK PLAY AGAIN");
-          setLive(false);
-        }
-      });
+            /* LED LIVE */
+            .live-dot {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #550000;
+              border: 1px solid #FF4444;
+              box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+            }
 
-      pauseBtn.addEventListener("click", () => { a.pause(); });
-      stopBtn.addEventListener("click", () => {
-        a.pause();
-        a.load(); // reseta conexão do stream
-        setStatus("STOPPED");
-        setLive(false);
-      });
+            /* piscando “hard” (sem fade) */
+            .live-on .live-dot {
+              animation: liveblink 1s steps(1, end) infinite;
+            }
 
-      a.addEventListener("playing", () => { setStatus("PLAYING"); setLive(true); });
-      a.addEventListener("pause",   () => { setStatus("PAUSED");  setLive(false); });  /* pause event [web:226] */
-      a.addEventListener("waiting", () => { setStatus("BUFFERING..."); setLive(false); }); /* waiting event [web:224] */
-      a.addEventListener("error",   () => { setStatus("ERROR (STREAM)"); setLive(false); }); /* error event [web:235] */
-    })();
-  </script>
-</div>
-        
-<div class="panel-inset" style="background:black;margin-bottom:15px;">
-  <h4 style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;">BADGES</h4>
+            @keyframes liveblink {
 
-  <div class="badge-grid">
-    <a href="https://github.com" target="_blank" rel="noopener">
-      <img src="badges/github.gif" alt="GitHub">
-    </a>
-    <a href="https://korn.com" target="_blank" rel="noopener">
-      <img src="badges/korncom.gif" alt="korn.com">
-    </a>
-    <a href="#" onclick="return false;">
-      <img src="badges/duvigneaud.gif" alt="duvignaud">
-    </a>
-    <a href="#" onclick="return false;">
-      <img src="badges/besteyes.gif" alt="Best Viewed With Eyes">
-    </a>
-    <a href="#" onclick="return false;">
-      <img src="badges/fingerofgod.gif" alt="Finger of God">
-    </a>
-    <a href="#" onclick="return false;">
-      <img src="badges/akageobutton2.gif" alt="Geocities">
-    </a>
-    <a href="https://www.linux.org" target="_blank" rel="noopener">
-      <img src="badges/linuxnow2.gif" alt="Linux Now">
-    </a>
-    <a href="https://www.noaa.gov" target="_blank" rel="noopener">
-      <img src="badges/noaa.gif" alt="NOAA">
-    </a>
-  </div>
+              0%,
+              49% {
+                background: #FF0000;
+                box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+              }
 
+              50%,
+              100% {
+                background: #550000;
+                box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+              }
+            }
 
+            .live-off .live-dot {
+              background: #330000;
+              box-shadow: none;
+              opacity: 0.6;
+            }
+          </style>
 
-  <style>
-    .badge-grid{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 6px;
-      justify-items: center;
-      align-items: center;
-    }
-    .badge-grid img{
-      width: 80px;     /* cabe 2 colunas no sidebar 200px */
-      height: auto;    /* mantém proporção */
-      image-rendering: pixelated;
-      display: block;
-      border: 1px solid #222; /* opcional: “moldura” discreta */
-      background: #000;
-    }
-  </style>
-</div>
-     
-     <div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
-  <h4 style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;">VIEWERS ONLINE</h4>
+          <script>
+            (function () {
+              const a = document.getElementById("rp-audio");
+              const playBtn = document.getElementById("rp-play");
+              const pauseBtn = document.getElementById("rp-pause");
+              const stopBtn = document.getElementById("rp-stop");
+              const vol = document.getElementById("rp-vol");
+              const statusEl = document.getElementById("rp-status");
+              const live = document.getElementById("live-indicator");
 
-  <div id="wau-widget" style="display:flex;justify-content:center;"></div>
+              function setStatus(s) { statusEl.textContent = "STATUS: " + s; }
+              function setLive(on) {
+                live.classList.toggle("live-on", on);
+                live.classList.toggle("live-off", !on);
+              }
 
-  <script id="_wauqn9">
-    var _wau = _wau || [];
-    _wau.push(["dynamic", "qr6wf59vj9", "qn9", "c4302bffffff", "small"]);
-  </script>
+              setLive(false);
+              a.volume = Number(vol.value);
+              vol.addEventListener("input", () => { a.volume = Number(vol.value); });
 
-  <!-- melhor fixar https (evita dor de cabeça) -->
-  <script async src="https://waust.at/d.js"></script>
-</div>
+              playBtn.addEventListener("click", async () => {
+                try {
+                  setStatus("CONNECTING...");
+                  await a.play();
+                } catch (e) {
+                  setStatus("CLICK PLAY AGAIN");
+                  setLive(false);
+                }
+              });
 
-  <!-- NYAN CAT (sidebar) -->
-<div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
+              pauseBtn.addEventListener("click", () => { a.pause(); });
+              stopBtn.addEventListener("click", () => {
+                a.pause();
+                a.load(); // reseta conexão do stream
+                setStatus("STOPPED");
+                setLive(false);
+              });
+
+              a.addEventListener("playing", () => { setStatus("PLAYING"); setLive(true); });
+              a.addEventListener("pause", () => { setStatus("PAUSED"); setLive(false); });  /* pause event [web:226] */
+              a.addEventListener("waiting", () => { setStatus("BUFFERING..."); setLive(false); }); /* waiting event [web:224] */
+              a.addEventListener("error", () => { setStatus("ERROR (STREAM)"); setLive(false); }); /* error event [web:235] */
+            })();
+          </script>
+        </div>
+
+        <div class="panel-inset" style="background:black;margin-bottom:15px;">
+          <h4 style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;">BADGES</h4>
+
+          <div class="badge-grid">
+            <a href="https://github.com" target="_blank" rel="noopener">
+              <img src="badges/github.gif" alt="GitHub">
+            </a>
+            <a href="https://korn.com" target="_blank" rel="noopener">
+              <img src="badges/korncom.gif" alt="korn.com">
+            </a>
+            <a href="#" onclick="return false;">
+              <img src="badges/duvigneaud.gif" alt="duvignaud">
+            </a>
+            <a href="#" onclick="return false;">
+              <img src="badges/besteyes.gif" alt="Best Viewed With Eyes">
+            </a>
+            <a href="#" onclick="return false;">
+              <img src="badges/fingerofgod.gif" alt="Finger of God">
+            </a>
+            <a href="#" onclick="return false;">
+              <img src="badges/akageobutton2.gif" alt="Geocities">
+            </a>
+            <a href="https://www.linux.org" target="_blank" rel="noopener">
+              <img src="badges/linuxnow2.gif" alt="Linux Now">
+            </a>
+            <a href="https://www.noaa.gov" target="_blank" rel="noopener">
+              <img src="badges/noaa.gif" alt="NOAA">
+            </a>
+          </div>
 
 
-  <img
-    src="nyan-cat.gif"
-    alt="Nyan Cat"
-    loading="lazy"
-    style="width:180px;height:auto;display:block;margin:0 auto;"
-  >
-</div>
-   
+
+          <style>
+            .badge-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 6px;
+              justify-items: center;
+              align-items: center;
+            }
+
+            .badge-grid img {
+              width: 80px;
+              /* cabe 2 colunas no sidebar 200px */
+              height: auto;
+              /* mantém proporção */
+              image-rendering: pixelated;
+              display: block;
+              border: 1px solid #222;
+              /* opcional: “moldura” discreta */
+              background: #000;
+            }
+          </style>
+        </div>
+
+        <div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
+          <h4 style="color:#FFFF00;margin:0 0 6px 0;border-bottom:1px dashed #666;">VIEWERS ONLINE</h4>
+
+          <div id="wau-widget" style="display:flex;justify-content:center;"></div>
+
+          <script id="_wauqn9">
+            var _wau = _wau || [];
+            _wau.push(["dynamic", "qr6wf59vj9", "qn9", "c4302bffffff", "small"]);
+          </script>
+
+          <!-- melhor fixar https (evita dor de cabeça) -->
+          <script async src="https://waust.at/d.js"></script>
+        </div>
+
+        <!-- NYAN CAT (sidebar) -->
+        <div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
+
+
+          <img src="nyan-cat.gif" alt="Nyan Cat" loading="lazy"
+            style="width:180px;height:auto;display:block;margin:0 auto;">
+        </div>
+
       </td>
 
       <!-- MAIN -->
@@ -515,14 +561,16 @@
     </tr>
 
     <tr>
-      <td colspan="2" align="center" style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
+      <td colspan="2" align="center"
+        style="background-color:#000000;border-top:4px solid #C0C0C0;padding:10px;color:#666;">
         <p>
           <img src="https://web.archive.org/web/20091027083754/http://geocities.com/Athens/Acropolis/3159/email.gif"
-               style="vertical-align:middle;" alt="Email" loading="lazy">
-          <a href="msouza449@gmail.com">EMAIL WEBMASTER</a>
+            style="vertical-align:middle;" alt="Email" loading="lazy">
+          <a href="mailto:msouza449@gmail.com">EMAIL WEBMASTER</a>
         </p>
 
-        <p id="visitor-counter" style="font-family:'Courier New',monospace;color:#00FF00;border:1px solid #333;display:inline-block;padding:2px 10px;">
+        <p id="visitor-counter"
+          style="font-family:'Courier New',monospace;color:#00FF00;border:1px solid #333;display:inline-block;padding:2px 10px;">
           VISITOR 000001
         </p>
 
@@ -532,8 +580,10 @@
         </p>
 
         <p>
-          <img src="https://web.archive.org/web/20090829023724/http://geocities.com/SouthBeachMarina/6770/ielogo.gif" alt="IE Compatible" loading="lazy">
-          <img src="https://web.archive.org/web/20091026192237/http://geocities.com/HeartlandAcres/6548/nslogo.gif" alt="Netscape Compatible" loading="lazy">
+          <img src="https://web.archive.org/web/20090829023724/http://geocities.com/SouthBeachMarina/6770/ielogo.gif"
+            alt="IE Compatible" loading="lazy">
+          <img src="https://web.archive.org/web/20091026192237/http://geocities.com/HeartlandAcres/6548/nslogo.gif"
+            alt="Netscape Compatible" loading="lazy">
         </p>
       </td>
     </tr>
@@ -579,7 +629,7 @@
       .then(r => r.json())
       .then(posts => {
         const root = document.getElementById("latest-posts");
-        const sorted = posts.slice().sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+        const sorted = posts.slice().sort((a, b) => (b.date || "").localeCompare(a.date || ""));
         const top = sorted.slice(0, 3);
 
         if (!top.length) {
@@ -648,4 +698,5 @@
       });
   </script>
 </body>
+
 </html>

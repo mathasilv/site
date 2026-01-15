@@ -5,50 +5,62 @@
 
 <hr class="retro" />
 
-<p>Hoje quero apresentar em detalhes a <strong>NPA Ground Station</strong>, uma solução de software completa que desenvolvi para recepção, decodificação e visualização de telemetria via rádio (LoRa/SDR) e rede.</p>
+<p>Hoje quero apresentar em detalhes a <strong>NPA Ground Station</strong>, uma solução de software completa que
+  desenvolvi para recepção, decodificação e visualização de telemetria via rádio (LoRa/SDR) e rede.</p>
 
-<p>O objetivo principal deste projeto foi resolver um problema comum em estações terrestres: a rigidez. Normalmente, para adicionar um novo sensor ou satélite, é preciso reescrever o código-fonte. Na NPA-GS v5.2, isso mudou radicalmente.</p>
+<p>O objetivo principal deste projeto foi resolver um problema comum em estações terrestres: a rigidez. Normalmente,
+  para adicionar um novo sensor ou satélite, é preciso reescrever o código-fonte. Na NPA-GS v5.2, isso mudou
+  radicalmente.</p>
 
 <h3>1. O Coração: Decoder Engine Dinâmico</h3>
-<p>A maior inovação do projeto está no núcleo de processamento. Criei um <em>Decoder Engine</em> que elimina a necessidade de programar "parsers" manualmente.</p>
+<p>A maior inovação do projeto está no núcleo de processamento. Criei um <em>Decoder Engine</em> que elimina a
+  necessidade de programar "parsers" manualmente.</p>
 
 <p>
-  <img src="../photos/gui.jpeg" alt="GUI"
-       style="border:2px inset #FFF; width: 100%;">
+  <img src="../photos/gui.jpeg" alt="GUI" style="border:2px inset #FFF; width: 100%;">
 </p>
 
-<p>Todo o protocolo de comunicação é definido em arquivos <strong>YAML</strong>. O motor lê esse arquivo e aprende dinamicamente como extrair bits, bytes, inteiros, floats e até arrays de dentro dos pacotes brutos. Isso permite que a estação suporte múltiplos satélites ou sensores simultaneamente, usando o sistema de <em>Multi-Decoder</em> para detecção automática.</p>
+<p>Todo o protocolo de comunicação é definido em arquivos <strong>YAML</strong>. O motor lê esse arquivo e aprende
+  dinamicamente como extrair bits, bytes, inteiros, floats e até arrays de dentro dos pacotes brutos. Isso permite que a
+  estação suporte múltiplos satélites ou sensores simultaneamente, usando o sistema de <em>Multi-Decoder</em> para
+  detecção automática.</p>
 
 <h3>2. Hardware e SDR (Software Defined Radio)</h3>
-<p>Para a camada física, integrei o <strong>GNU Radio</strong> diretamente na aplicação Python. Isso permite conectar dongles RTL-SDR baratos e receber sinais reais do ar.</p>
+<p>Para a camada física, integrei o <strong>GNU Radio</strong> diretamente na aplicação Python. Isso permite conectar
+  dongles RTL-SDR baratos e receber sinais reais do ar.</p>
 
 <ul>
-    <li><strong>Waterfall em Tempo Real:</strong> Implementei um "sniffer" que captura dados da FFT e desenha o espectro de radiofrequência na interface, permitindo visualizar o sinal chegando.</li>
-    <li><strong>Modo Híbrido:</strong> Se você não tem um rádio por perto, o sistema possui um receptor UDP embutido, permitindo testar a estação via rede ou receber dados de outros computadores.</li>
+  <li><strong>Waterfall em Tempo Real:</strong> Implementei um "sniffer" que captura dados da FFT e desenha o espectro
+    de radiofrequência na interface, permitindo visualizar o sinal chegando.</li>
+  <li><strong>Modo Híbrido:</strong> Se você não tem um rádio por perto, o sistema possui um receptor UDP embutido,
+    permitindo testar a estação via rede ou receber dados de outros computadores.</li>
 </ul>
 
 <p>
-  <img src="../photos/sdr_setup.jpg" alt="Setup com RTL-SDR e Antena"
-       style="border:2px inset #FFF; width: 100%;">
+  <img src="../photos/sdr_setup.jpg" alt="Setup com RTL-SDR e Antena" style="border:2px inset #FFF; width: 100%;">
 </p>
 
 <h3>3. Interface Gráfica e Ferramentas</h3>
-<p>A interface foi construída com <em>CustomTkinter</em> para um visual moderno e responsivo. Além de exibir os dados decodificados e o espectro, desenvolvi um <strong>Editor Integrado</strong>. Você pode criar, editar e validar os schemas YAML dos seus sensores sem nunca fechar a aplicação.</p>
+<p>A interface foi construída com <em>CustomTkinter</em> para um visual moderno e responsivo. Além de exibir os dados
+  decodificados e o espectro, desenvolvi um <strong>Editor Integrado</strong>. Você pode criar, editar e validar os
+  schemas YAML dos seus sensores sem nunca fechar a aplicação.</p>
 
-<p>Todos os dados recebidos são automaticamente rotacionados e salvos em formato JSONL (JSON Lines), garantindo que nenhum pacote de telemetria seja perdido, mesmo em operações de longa duração.</p>
+<p>Todos os dados recebidos são automaticamente rotacionados e salvos em formato JSONL (JSON Lines), garantindo que
+  nenhum pacote de telemetria seja perdido, mesmo em operações de longa duração.</p>
 
 <h3>Resumo das Tecnologias</h3>
 <ul>
-    <li><strong>Linguagem:</strong> Python 3.10+</li>
-    <li><strong>GUI:</strong> CustomTkinter & Matplotlib</li>
-    <li><strong>DSP/Rádio:</strong> GNU Radio & Osmocom SDR</li>
-    <li><strong>Dados:</strong> YAML (Configuração) & JSONL (Logs)</li>
+  <li><strong>Linguagem:</strong> Python 3.10+</li>
+  <li><strong>GUI:</strong> CustomTkinter & Matplotlib</li>
+  <li><strong>DSP/Rádio:</strong> GNU Radio & Osmocom SDR</li>
+  <li><strong>Dados:</strong> YAML (Configuração) & JSONL (Logs)</li>
 </ul>
 
 <p>O projeto é Open Source e convido todos a contribuírem ou testarem com seus próprios sensores LoRa.</p>
 
 <p style="margin-top: 20px;">
-  <a href="SEU_LINK_DO_GITHUB_AQUI" target="_blank" style="color:#00FFFF; font-weight:bold; text-decoration:none;">
+  <a href="https://github.com/mathasilv/npa-gs-source" target="_blank"
+    style="color:#00FFFF; font-weight:bold; text-decoration:none;">
     [ > ACESSAR CÓDIGO FONTE NO GITHUB ]
   </a>
 </p>

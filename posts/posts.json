@@ -1,14 +1,50 @@
 [
   {
-    "id": "primeiro-post",
-    "title": "Primeiro post",
-    "date": "2025-12-26",
-    "excerpt": "Teste rápido do formato blog. Aqui vai um resumo curto."
-  },
-  {
     "id": "npags01",
     "title": "NPA GROUND STATION v5.2",
     "date": "2025-12-27",
     "excerpt": "Refatoração completa da estação terrestre com motor de decodificação YAML e suporte a hardware SDR."
+  },
+  {
+    "id": "agrosat-iot",
+    "title": "AGROSAT-IOT",
+    "date": "2025-11-04",
+    "excerpt": "Sistema de IoT para agricultura de precisão com comunicação via satélite e LoRa."
+  },
+  {
+    "id": "agrinode-simulator",
+    "title": "AGRINODE-SIMULATOR",
+    "date": "2025-11-25",
+    "excerpt": "Simulador de nós agrícolas para testes de sistemas IoT voltados para agricultura."
+  },
+  {
+    "id": "homelab-monitor",
+    "title": "HOMELAB-MONITOR",
+    "date": "2026-01-13",
+    "excerpt": "Sistema de monitoramento para homelab em Python. Acompanhe CPU, memória e serviços."
+  },
+  {
+    "id": "orbitscout",
+    "title": "ORBITSCOUT",
+    "date": "2025-04-13",
+    "excerpt": "Rastreador de satélites standalone usando TLE. Saiba onde está a ISS em tempo real."
+  },
+  {
+    "id": "sattracker-standalone",
+    "title": "SATTRACKER-STANDALONE",
+    "date": "2024-11-30",
+    "excerpt": "Rastreador de satélites leve e portátil para microcontroladores."
+  },
+  {
+    "id": "espotify",
+    "title": "ESPOTIFY",
+    "date": "2023-07-13",
+    "excerpt": "Integração entre ESP32 e a API do Spotify. Controle físico para sua música."
+  },
+  {
+    "id": "smart-plant",
+    "title": "SMART-PLANT-V4",
+    "date": "2023-07-10",
+    "excerpt": "Automação para cuidar das suas plantas com rega automática e sensores de umidade."
   }
 ]
