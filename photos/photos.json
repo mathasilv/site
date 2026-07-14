@@ -1,6 +1,7 @@
 [
   { "file": "IMG_0001.jpg", "caption": "galaxy" },
-  "IMG_0002.jpg",
-  "IMG_0003.png"
+  { "file": "gui.jpeg", "caption": "NPA Ground Station GUI" },
+  { "file": "orbitscout-device.jpeg", "caption": "OrbitScout Device" },
+  { "file": "homelab-display.jpg", "caption": "Homelab Display" },
+  { "file": "sattracker-schematic.png", "caption": "SatTracker Schematic" }
 ]
-

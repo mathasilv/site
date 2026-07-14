@@ -5,211 +5,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MATHASILV's LAB</title>
+  <link rel="stylesheet" href="assets/style.css">
   <style>
-    body {
-      background-color: #000000;
-      background-image: url("https://web.archive.org/web/20090829033325/http://geocities.com/HeartlandBluffs/4157/starbg.gif");
-      background-repeat: repeat;
-      color: #CCCCCC;
-      font-family: Verdana, Arial, sans-serif;
-      font-size: 12px;
-      margin: 0;
-      padding: 20px;
+    /* thumbs da home: 100x100 (galeria usa 200x150 via classe inline/cáp) */
+    #gallery-preview .photo-frame img {
+      width: 100px;
+      height: 100px;
     }
 
-    h1,
-    h2,
-    h3 {
-      font-family: "Courier New", Courier, monospace;
-      text-transform: uppercase;
-      margin-top: 0;
-      letter-spacing: 1px;
-    }
-
-    .text-3d {
-      color: #FFFF00;
-      text-shadow: 2px 2px 0px #000000, 4px 4px 0px #333333;
-      font-weight: bold;
-    }
-
-    a {
-      color: #00FFFF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
-      cursor: help;
-    }
-
-    a:visited {
-      color: #FF00FF;
-    }
-
-    .main-container {
-      width: 800px;
-      margin: 0 auto;
-      background-color: #000033;
-      border: 4px solid #C0C0C0;
-      border-top-color: #FFFFFF;
-      border-left-color: #FFFFFF;
-      border-right-color: #606060;
-      border-bottom-color: #606060;
-    }
-
-    .panel-outset {
-      background-color: #C0C0C0;
-      border: 2px solid;
-      border-color: #FFFFFF #808080 #808080 #FFFFFF;
-      padding: 5px;
-      color: black;
-    }
-
-    .panel-inset {
-      background-color: #000000;
-      border: 2px solid;
-      border-color: #808080 #FFFFFF #FFFFFF #808080;
-      padding: 10px;
-      color: #00FF00;
-    }
-
-    .nav-btn {
-      display: block;
+    /* botão Win9x do player de rádio */
+    .retro-btn {
       width: 100%;
       background: #C0C0C0;
       border: 2px solid;
       border-color: #FFFFFF #000000 #000000 #FFFFFF;
-      text-align: center;
-      padding: 5px 0;
+      padding: 4px 0;
       font-weight: bold;
-      color: #000000 !important;
-      text-decoration: none !important;
-      margin-bottom: 5px;
+      color: #000000;
       font-family: "MS Sans Serif", Arial, sans-serif;
+      font-size: 11px;
+      cursor: pointer;
     }
 
-    .nav-btn:active {
+    .retro-btn:active {
       border-color: #000000 #FFFFFF #FFFFFF #000000;
       transform: translate(1px, 1px);
     }
 
-    .marquee-container {
-      background: black;
-      border: 2px inset white;
-      color: #00FF00;
-      font-family: "Courier New", monospace;
-      padding: 5px;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .project-card {
-      background: #000022;
-      border: 2px solid #00FFFF;
-      padding: 8px;
-      margin-bottom: 12px;
-      text-align: left;
-    }
-
-    .project-card h4 {
-      margin: 0 0 6px 0;
-      color: #00FFFF;
-      font-family: "Courier New", monospace;
-      text-transform: none;
-    }
-
-    .view-all-btn {
-      display: inline-block;
-      background: #000088;
-      color: #00FFFF !important;
-      padding: 8px 20px;
-      border: 2px solid;
-      border-color: #00FFFF #000044 #000044 #00FFFF;
-      font-weight: bold;
-      text-decoration: none !important;
-      font-family: "Courier New", monospace;
-      margin: 10px 0;
-    }
-
-    .view-all-btn:hover {
-      background: #0000AA;
-      color: #FFFFFF !important;
-    }
-
-    .view-all-btn:active {
-      border-color: #000044 #00FFFF #00FFFF #000044;
-      transform: translate(2px, 2px);
-    }
-
-    .photo-frame {
-      background: #C0C0C0;
-      padding: 5px;
-      display: inline-block;
-      margin: 5px;
-      border: 1px solid #000;
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-      vertical-align: top;
-    }
-
-    .photo-frame img {
-      border: 2px inset #FFF;
-      width: 100px;
-      height: 100px;
-      cursor: zoom-in;
-      object-fit: cover;
-    }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+    /* slider retrô */
+    .retro-range {
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    #lightbox img {
-      border: 5px solid #C0C0C0;
-      max-width: 90%;
-      max-height: 80%;
-    }
-
-    #lightbox-close {
-      color: white;
-      font-family: Arial, sans-serif;
-      font-size: 20px;
-      margin-top: 10px;
+      background: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 18px;
       cursor: pointer;
-      text-decoration: underline;
     }
 
-    hr.retro {
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 255, 255, 0.75), rgba(0, 0, 0, 0));
-      margin: 20px 0;
+    .retro-range::-webkit-slider-runnable-track {
+      height: 6px;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #808080 #FFFFFF #FFFFFF #808080;
     }
 
-    .blink {
-      animation: blink 1s steps(1, end) infinite;
+    .retro-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 16px;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #000000 #000000 #FFFFFF;
+      margin-top: -7px;
     }
 
-    @keyframes blink {
+    .retro-range::-moz-range-track {
+      height: 6px;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #808080 #FFFFFF #FFFFFF #808080;
+    }
 
-      0%,
-      100% {
-        opacity: 1;
+    .retro-range::-moz-range-thumb {
+      width: 12px;
+      height: 16px;
+      background: #C0C0C0;
+      border: 2px solid;
+      border-color: #FFFFFF #000000 #000000 #FFFFFF;
+      border-radius: 0;
+    }
+
+    /* LED LIVE */
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #550000;
+      border: 1px solid #FF4444;
+      box-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+
+    .live-on .live-dot {
+      animation: liveblink 1s steps(1, end) infinite;
+    }
+
+    @keyframes liveblink {
+      0%, 49% {
+        background: #FF0000;
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
       }
-
-      50% {
-        opacity: 0;
+      50%, 100% {
+        background: #550000;
+        box-shadow: 0 0 0 rgba(255, 0, 0, 0);
       }
+    }
+
+    .live-off .live-dot {
+      background: #330000;
+      box-shadow: none;
+      opacity: 0.6;
+    }
+
+    /* grade de badges */
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .badge-grid img {
+      width: 80px;
+      height: auto;
+      image-rendering: pixelated;
+      display: block;
+      border: 1px solid #222;
+      background: #000;
     }
   </style>
 </head>
@@ -244,13 +156,7 @@
     <tr>
       <!-- LEFT NAV -->
       <td valign="top" width="200" style="background-color:#C0C0C0;border-right:2px solid #606060;padding:10px;">
-        <div class="panel-outset" style="margin-bottom:15px;">
-          <h3 style="text-align:center;font-size:14px;margin-bottom:5px;">COMMAND</h3>
-          <a href="index.html" class="nav-btn">HOME</a>
-          <a href="projects.html" class="nav-btn">POSTS</a>
-          <a href="gallery.html" class="nav-btn">PHOTOS</a>
-          <a href="mailto:msouza449@gmail.com" class="nav-btn">CONTACT</a>
-        </div>
+        <div id="site-nav"></div>
 
         <div class="panel-inset" style="background:black;margin-bottom:15px;">
           <h4 style="color:#FFFF00;margin:0 0 5px 0;border-bottom:1px dashed #666;">LOG ENTRY</h4>
@@ -295,151 +201,6 @@
           <audio id="rp-audio" preload="none" crossorigin="anonymous">
             <source src="https://stream.nightride.fm/nightride.m4a" type="audio/mp4">
           </audio>
-
-          <style>
-            /* botão Win9x */
-            .retro-btn {
-              width: 100%;
-              background: #C0C0C0;
-              border: 2px solid;
-              border-color: #FFFFFF #000000 #000000 #FFFFFF;
-              padding: 4px 0;
-              font-weight: bold;
-              color: #000000;
-              font-family: "MS Sans Serif", Arial, sans-serif;
-              font-size: 11px;
-              cursor: pointer;
-            }
-
-            .retro-btn:active {
-              border-color: #000000 #FFFFFF #FFFFFF #000000;
-              transform: translate(1px, 1px);
-            }
-
-            /* slider retrô (cinza) */
-            .retro-range {
-              width: 100%;
-              background: transparent;
-              -webkit-appearance: none;
-              appearance: none;
-              height: 18px;
-              cursor: pointer;
-            }
-
-            .retro-range::-webkit-slider-runnable-track {
-              height: 6px;
-              background: #C0C0C0;
-              border: 2px solid;
-              border-color: #808080 #FFFFFF #FFFFFF #808080;
-            }
-
-            .retro-range::-webkit-slider-thumb {
-              -webkit-appearance: none;
-              width: 12px;
-              height: 16px;
-              background: #C0C0C0;
-              border: 2px solid;
-              border-color: #FFFFFF #000000 #000000 #FFFFFF;
-              margin-top: -7px;
-            }
-
-            .retro-range::-moz-range-track {
-              height: 6px;
-              background: #C0C0C0;
-              border: 2px solid;
-              border-color: #808080 #FFFFFF #FFFFFF #808080;
-            }
-
-            .retro-range::-moz-range-thumb {
-              width: 12px;
-              height: 16px;
-              background: #C0C0C0;
-              border: 2px solid;
-              border-color: #FFFFFF #000000 #000000 #FFFFFF;
-              border-radius: 0;
-            }
-
-            /* LED LIVE */
-            .live-dot {
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: #550000;
-              border: 1px solid #FF4444;
-              box-shadow: 0 0 0 rgba(255, 0, 0, 0);
-            }
-
-            /* piscando “hard” (sem fade) */
-            .live-on .live-dot {
-              animation: liveblink 1s steps(1, end) infinite;
-            }
-
-            @keyframes liveblink {
-
-              0%,
-              49% {
-                background: #FF0000;
-                box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
-              }
-
-              50%,
-              100% {
-                background: #550000;
-                box-shadow: 0 0 0 rgba(255, 0, 0, 0);
-              }
-            }
-
-            .live-off .live-dot {
-              background: #330000;
-              box-shadow: none;
-              opacity: 0.6;
-            }
-          </style>
-
-          <script>
-            (function () {
-              const a = document.getElementById("rp-audio");
-              const playBtn = document.getElementById("rp-play");
-              const pauseBtn = document.getElementById("rp-pause");
-              const stopBtn = document.getElementById("rp-stop");
-              const vol = document.getElementById("rp-vol");
-              const statusEl = document.getElementById("rp-status");
-              const live = document.getElementById("live-indicator");
-
-              function setStatus(s) { statusEl.textContent = "STATUS: " + s; }
-              function setLive(on) {
-                live.classList.toggle("live-on", on);
-                live.classList.toggle("live-off", !on);
-              }
-
-              setLive(false);
-              a.volume = Number(vol.value);
-              vol.addEventListener("input", () => { a.volume = Number(vol.value); });
-
-              playBtn.addEventListener("click", async () => {
-                try {
-                  setStatus("CONNECTING...");
-                  await a.play();
-                } catch (e) {
-                  setStatus("CLICK PLAY AGAIN");
-                  setLive(false);
-                }
-              });
-
-              pauseBtn.addEventListener("click", () => { a.pause(); });
-              stopBtn.addEventListener("click", () => {
-                a.pause();
-                a.load(); // reseta conexão do stream
-                setStatus("STOPPED");
-                setLive(false);
-              });
-
-              a.addEventListener("playing", () => { setStatus("PLAYING"); setLive(true); });
-              a.addEventListener("pause", () => { setStatus("PAUSED"); setLive(false); });  /* pause event [web:226] */
-              a.addEventListener("waiting", () => { setStatus("BUFFERING..."); setLive(false); }); /* waiting event [web:224] */
-              a.addEventListener("error", () => { setStatus("ERROR (STREAM)"); setLive(false); }); /* error event [web:235] */
-            })();
-          </script>
         </div>
 
         <div class="panel-inset" style="background:black;margin-bottom:15px;">
@@ -471,30 +232,6 @@
               <img src="badges/noaa.gif" alt="NOAA">
             </a>
           </div>
-
-
-
-          <style>
-            .badge-grid {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              gap: 6px;
-              justify-items: center;
-              align-items: center;
-            }
-
-            .badge-grid img {
-              width: 80px;
-              /* cabe 2 colunas no sidebar 200px */
-              height: auto;
-              /* mantém proporção */
-              image-rendering: pixelated;
-              display: block;
-              border: 1px solid #222;
-              /* opcional: “moldura” discreta */
-              background: #000;
-            }
-          </style>
         </div>
 
         <div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
@@ -507,14 +244,11 @@
             _wau.push(["dynamic", "qr6wf59vj9", "qn9", "c4302bffffff", "small"]);
           </script>
 
-          <!-- melhor fixar https (evita dor de cabeça) -->
           <script async src="https://waust.at/d.js"></script>
         </div>
 
         <!-- NYAN CAT (sidebar) -->
         <div class="panel-inset" style="background:black;margin-bottom:15px;text-align:center;">
-
-
           <img src="nyan-cat.gif" alt="Nyan Cat" loading="lazy"
             style="width:180px;height:auto;display:block;margin:0 auto;">
         </div>
@@ -567,72 +301,103 @@
   </table>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox" onclick="closeLightbox()">
+  <div id="lightbox">
     <img id="lightbox-img" src="" alt="Lightbox image">
-    <div id="lightbox-close">CLOSE WINDOW — ESC</div>
+    <div id="lightbox-info"></div>
+    <div id="lightbox-close">CLOSE WINDOW — ESC / CLIQUE</div>
   </div>
 
+  <script src="assets/site.js" defer></script>
+  <script src="assets/nav.js" defer></script>
   <script>
-    // INIT
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById("last-mod").innerText = document.lastModified;
-      document.getElementById("marquee-date").innerText = new Date().toLocaleDateString().toUpperCase();
-    });
+    (function () {
+      "use strict";
 
-    // LIGHTBOX
-    function openLightbox(imageSrc) {
-      const lightbox = document.getElementById("lightbox");
-      const img = document.getElementById("lightbox-img");
-      img.src = imageSrc;
-      lightbox.style.display = "flex";
-    }
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
-    });
+      var a = document.getElementById("rp-audio");
+      var playBtn = document.getElementById("rp-play");
+      var pauseBtn = document.getElementById("rp-pause");
+      var stopBtn = document.getElementById("rp-stop");
+      var vol = document.getElementById("rp-vol");
+      var statusEl = document.getElementById("rp-status");
+      var live = document.getElementById("live-indicator");
+
+      function setStatus(s) { statusEl.textContent = "STATUS: " + s; }
+      function setLive(on) {
+        live.classList.toggle("live-on", on);
+        live.classList.toggle("live-off", !on);
+      }
+
+      setLive(false);
+      a.volume = Number(vol.value);
+      vol.addEventListener("input", function () { a.volume = Number(vol.value); });
+
+      playBtn.addEventListener("click", async function () {
+        try {
+          setStatus("CONNECTING...");
+          await a.play();
+        } catch (e) {
+          setStatus("CLICK PLAY AGAIN");
+          setLive(false);
+        }
+      });
+
+      pauseBtn.addEventListener("click", function () { a.pause(); });
+      stopBtn.addEventListener("click", function () {
+        a.pause();
+        a.load();
+        setStatus("STOPPED");
+        setLive(false);
+      });
+
+      a.addEventListener("playing", function () { setStatus("PLAYING"); setLive(true); });
+      a.addEventListener("pause",    function () { setStatus("PAUSED");  setLive(false); });
+      a.addEventListener("waiting",  function () { setStatus("BUFFERING..."); setLive(false); });
+      a.addEventListener("error",    function () { setStatus("ERROR (STREAM)"); setLive(false); });
+    })();
 
     // LATEST POSTS (from posts/posts.json)
     fetch("posts/posts.json")
-      .then(r => r.json())
-      .then(posts => {
-        const root = document.getElementById("latest-posts");
-        const sorted = posts.slice().sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-        const top = sorted.slice(0, 3);
+      .then(function (r) { return r.json(); })
+      .then(function (posts) {
+        var root = document.getElementById("latest-posts");
+        var sorted = posts.slice().sort(function (x, y) {
+          return (y.date || "").localeCompare(x.date || "");
+        });
+        var top = sorted.slice(0, 3);
 
         if (!top.length) {
           root.innerHTML = "<div class='panel-inset'>Nenhum post ainda.</div>";
           return;
         }
 
-        root.innerHTML = top.map(p => `
-          <div class="project-card">
-            <h4>${p.title || "Sem título"}</h4>
-            <div style="color:#00FFFF;font-family:'Courier New',monospace;font-size:11px;">
-              ${p.date || ""}
-            </div>
-            <div style="margin-top:6px;color:#CCCCCC;">
-              ${p.excerpt || ""}
-            </div>
-            <div style="margin-top:8px;">
-              <a href="post.html?id=${encodeURIComponent(p.id)}">READ</a>
-            </div>
-          </div>
-        `).join("");
+        root.innerHTML = "";
+        top.forEach(function (p) {
+          var card = document.createElement("div");
+          card.className = "project-card";
+          var t = Site.esc(p.title || "Sem título");
+          var d = Site.esc(p.date || "");
+          var e = Site.esc(p.excerpt || "");
+          var id = encodeURIComponent(p.id || "");
+          card.innerHTML =
+            "<h4>" + t + "</h4>" +
+            '<div style="color:#00FFFF;font-family:\'Courier New\',monospace;font-size:11px;">' + d + "</div>" +
+            '<div style="margin-top:6px;color:#CCCCCC;">' + e + "</div>" +
+            '<div style="margin-top:8px;"><a href="post.html?id=' + id + '">READ</a></div>';
+          root.appendChild(card);
+        });
       })
-      .catch(() => {
+      .catch(function () {
         document.getElementById("latest-posts").innerHTML =
           "<div class='panel-inset'>Erro: não achei posts/posts.json</div>";
       });
 
     // GALLERY PREVIEW (from photos/photos.json)
-    const PHOTO_DIR = "photos/";
+    var PHOTO_DIR = "photos/";
     fetch(PHOTO_DIR + "photos.json")
-      .then(r => r.json())
-      .then(list => {
-        const root = document.getElementById("gallery-preview");
-        const top = list.slice(0, 4);
+      .then(function (r) { return r.json(); })
+      .then(function (list) {
+        var root = document.getElementById("gallery-preview");
+        var top = list.slice(0, 4);
 
         if (!top.length) {
           root.innerHTML = "<div class='panel-inset'>Sem fotos ainda.</div>";
@@ -640,28 +405,30 @@
         }
 
         root.innerHTML = "";
-        top.forEach(item => {
-          const file = (typeof item === "string") ? item : item.file;
-          const img = document.createElement("img");
+        top.forEach(function (item) {
+          var file = (typeof item === "string") ? item : item.file;
+          var caption = (typeof item === "string") ? item : (item.caption || item.file);
+
+          var frame = document.createElement("div");
+          frame.className = "photo-frame";
+
+          var img = document.createElement("img");
           img.loading = "lazy";
           img.src = PHOTO_DIR + file;
           img.alt = file;
-          img.onclick = () => openLightbox(img.src);
+          img.setAttribute("data-lightbox", caption || file);
 
-          const frame = document.createElement("div");
-          frame.className = "photo-frame";
-          frame.appendChild(img);
-
-          const cap = document.createElement("div");
+          var cap = document.createElement("div");
           cap.style.fontSize = "9px";
           cap.style.color = "black";
-          cap.textContent = (typeof item === "string") ? item : (item.caption || item.file);
-          frame.appendChild(cap);
+          cap.textContent = caption || file;
 
+          frame.appendChild(img);
+          frame.appendChild(cap);
           root.appendChild(frame);
         });
       })
-      .catch(() => {
+      .catch(function () {
         document.getElementById("gallery-preview").innerHTML =
           "<div class='panel-inset'>Erro: não achei photos/photos.json</div>";
       });
