@@ -9,7 +9,7 @@
       margin: 0;
       padding: 10px;
       background: #000;
-      background-image: url("https://web.archive.org/web/20090829033325/http://geocities.com/HeartlandBluffs/4157/starbg.gif");
+      background-image: url("assets/starbg.gif");
       background-repeat: repeat;
       font-family: Verdana, Arial, sans-serif;
       color: #ccc;
@@ -68,8 +68,14 @@
       // initialSkin: { url: "skins/SEU-SKIN.wsz" },
     };
 
-    const webamp = new window.Webamp(options);
-    webamp.renderWhenReady(document.getElementById("winamp-container"));
+    if (typeof Webamp !== "undefined") {
+      const webamp = new window.Webamp(options);
+      webamp.renderWhenReady(document.getElementById("winamp-container"));
+    } else {
+      document.getElementById("winamp-container").innerHTML =
+        '<div style="padding:20px;color:#FF4444;font-family:Courier New,monospace;">' +
+        'Webamp não carregou. Verifique sua conexão.</div>';
+    }
   </script>
 </body>
 </html>
