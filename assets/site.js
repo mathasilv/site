@@ -7,11 +7,11 @@
 
   function esc(s) {
     return String(s == null ? "" : s)
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """)
-      .replace(/'/g, "&#39;");
+      .replace(/&/g, "\x26amp;")
+      .replace(/</g, "\x26lt;")
+      .replace(/>/g, "\x26gt;")
+      .replace(/"/g, "\x26quot;")
+      .replace(/'/g, "\x26#39;");
   }
 
   // Preenche os campos "last modified" e data do marquee, se existirem.
